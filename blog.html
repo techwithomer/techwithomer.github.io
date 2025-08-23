@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Webmaster Blog</title>
+    <meta name="description" content="Web master blogu: SEO, site yönetimi, performans optimizasyonu ve web geliştirme ipuçlarıyla ilgili güncel yazılar.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>techwith<span class="highlight">omer</span></h2>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                    <li><a href="about.html" class="nav-link">Hakkımda</a></li>
+                    <li><a href="faq.html" class="nav-link">SSS</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link">İletişim</a></li>
+                </ul>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Webmaster Blog</h1>
+            <p>Web yönetimi, SEO, site optimizasyonu ve web geliştirme ipuçları</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-layout">
+                <div class="blog-main">
+                    <div class="blog-posts" id="blogPosts">
+                        <!-- Blog yazıları JavaScript ile yüklenecek -->
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination" id="pagination">
+                        <button class="btn btn-outline" id="loadMore">Daha Fazla Yükle</button>
+                    </div>
+                </div>
+                
+                <aside class="blog-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Popüler Yazılar</h3>
+                        <div class="popular-posts" id="popularPosts">
+                            <!-- Popüler yazılar JavaScript ile yüklenecek -->
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Kategoriler</h3>
+                        <div class="categories">
+                            <a href="#" class="category-link active" data-category="all">Tümü</a>
+                            <a href="#" class="category-link" data-category="seo-basics">SEO Temelleri</a>
+                            <a href="#" class="category-link" data-category="technical-seo">Teknik SEO</a>
+                            <a href="#" class="category-link" data-category="content-seo">İçerik SEO</a>
+                            <a href="#" class="category-link" data-category="local-seo">Local SEO</a>
+                            <a href="#" class="category-link" data-category="site-management">Site Yönetimi</a>
+                            <a href="#" class="category-link" data-category="performance">Performans Optimizasyonu</a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Newsletter</h3>
+                        <p>Web master ve SEO ipuçlarını kaçırmayın!</p>
+                        <br />
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" placeholder="E-mail adresiniz" required>
+                            <button type="submit" class="btn btn-primary">Abone Ol</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>techwith<span class="highlight">omer</span></h3>
+                    <p>Webmaster Blogu ile güncel web teknolojileri ve ipuçları sizlerle.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Sayfalar</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="about.html">Hakkımda</a></li>
+                        <li><a href="faq.html">SSS</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sosyal Medya</h4>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 techwithomer. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
