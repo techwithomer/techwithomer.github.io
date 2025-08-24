@@ -66,7 +66,7 @@ nav {
 }
 
 .highlight {
-  background: linear-gradient(45deg, #e6660b, #e6660b);
+  background: linear-gradient(45deg, #e74a4a, #e74a4a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -169,7 +169,7 @@ nav {
 }
 
 .btn-primary {
-  background-color: #e6660b;
+  background-color: #e74a4a;
   color: white;
 }
 
@@ -1017,7 +1017,7 @@ nav {
 }
 
 .blog-post-card {
-  padding: 1rem;
+  padding: 0rem;
   border-bottom: 1px solid var(--border-color);
   text-decoration: none;
   color: inherit;
