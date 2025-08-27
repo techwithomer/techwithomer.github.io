@@ -274,6 +274,174 @@ const blogPosts = [
         author: "Web Master",
         tags: ["Web Master", "Başlangıç", "SEO", "Site Yönetimi", "Performans"],
         popular: true
+    },
+    {
+        id: 7,
+        title: "2025'te Yapay Zeka Destekli SEO Stratejileri",
+        excerpt: "AI tabanlı araçlarla SEO süreçlerinizi nasıl güçlendirebileceğinizi öğrenin.",
+        content: `
+            <p>Yapay zeka, 2025 yılında SEO dünyasını kökten değiştirdi. Artık içerik optimizasyonundan anahtar kelime analizine kadar pek çok alanda AI tabanlı sistemler aktif olarak kullanılıyor.</p>
+            <h2>AI Tabanlı SEO Araçları</h2>
+            <ul>
+                <li>Doğal dil işleme ile içerik analizi</li>
+                <li>Makine öğrenimi tabanlı backlink analizi</li>
+                <li>Kullanıcı davranışı tahmin algoritmaları</li>
+                <li>Otomatik içerik öneri sistemleri</li>
+            </ul>
+            <h2>Avantajları</h2>
+            <p>AI kullanımı, hem zamandan tasarruf sağlar hem de daha doğru stratejiler geliştirmenize yardımcı olur. Ayrıca, manuel analizlerde gözden kaçabilecek detayları da yakalar.</p>
+            <h2>Sonuç</h2>
+            <p>2025’te başarılı bir SEO stratejisi oluşturmak için yapay zekadan faydalanmak artık bir seçenek değil, zorunluluk haline geldi.</p>
+        `,
+        category: "ai-seo",
+        date: "20 Ağustos 2025",
+        readTime: "12 dk",
+        author: "Web Master",
+        tags: ["SEO", "Yapay Zeka", "Performans", "Otomasyon"],
+        popular: true
+    },
+    {
+        id: 8,
+        title: "E-Ticaret Siteleri İçin Performans İyileştirme",
+        excerpt: "E-ticaret sitelerinde hız, güvenlik ve kullanıcı deneyimi artırma yöntemleri.",
+        content: `
+            <p>E-ticaret siteleri için hız ve kullanıcı deneyimi kritik bir faktördür. Yavaş açılan sayfalar hem arama motoru sıralamanızı düşürür hem de potansiyel müşterileri kaybetmenize yol açar.</p>
+            <h2>Performans İpuçları</h2>
+            <ul>
+                <li>Sunucu yanıt süresini kısaltmak için CDN kullanın</li>
+                <li>Görselleri WebP formatına dönüştürün</li>
+                <li>Kritik CSS ve JS dosyalarını öncelikli yükleyin</li>
+            </ul>
+            <h2>Mobil Deneyimi İyileştirme</h2>
+            <p>Mobil kullanıcıların çoğunlukta olduğunu unutmayın. Responsive tasarım ve hızlı ödeme süreçleri mobil dönüşümleri artırır.</p>
+            <h2>Sonuç</h2>
+            <p>Performans optimizasyonu, 2025’te e-ticaret başarısının en önemli anahtarıdır.</p>
+        `,
+        category: "ecommerce-performance",
+        date: "22 Ağustos 2025",
+        readTime: "14 dk",
+        author: "Web Master",
+        tags: ["E-Ticaret", "Performans", "UX", "SEO"],
+        popular: true
+    },
+    {
+        id: 9,
+        title: "2025'te Blog Siteleri İçin Yeni İçerik Trendleri",
+        excerpt: "Blog yazarları için yeni nesil içerik stratejileri ve yayınlama teknikleri.",
+        content: `
+            <p>2025 yılı, blog içeriklerinde devrim niteliğinde değişimlerin yaşandığı bir yıl oldu. Artık yalnızca metin tabanlı içerikler yeterli değil; kullanıcılar daha interaktif ve zengin içerikler bekliyor.</p>
+            <h2>Yeni Trendler</h2>
+            <ul>
+                <li>Video içerikleri ve podcast serileri</li>
+                <li>Interaktif quiz ve anketlerle etkileşim</li>
+                <li>AI destekli içerik üretim ve planlama</li>
+            </ul>
+            <h2>SEO ile Entegrasyon</h2>
+            <p>İçerikler yalnızca kullanıcılar için değil, arama motorları için de optimize edilmeli. Doğru anahtar kelime stratejileri, görsel optimizasyonu ve schema işaretlemeleri önemini koruyor.</p>
+            <h2>Sonuç</h2>
+            <p>Blog yazarları için başarı, kaliteli içerik ile modern trendleri harmanlayabilmekten geçiyor.</p>
+        `,
+        category: "blog-content",
+        date: "25 Ağustos 2025",
+        readTime: "13 dk",
+        author: "Web Master",
+        tags: ["Blog", "İçerik", "Trendler", "SEO"],
+        popular: false
+    },
+    {
+        id: 10,
+        title: "Gelişmiş Güvenlik Protokolleri ile Site Koruması",
+        excerpt: "2025'te siber tehditlere karşı gelişmiş güvenlik önlemleri.",
+        content: `
+            <p>Siber saldırıların artması, güvenlik konusunu web master’lar için en öncelikli alan haline getirdi. Artık basit SSL sertifikası ile yetinmek mümkün değil.</p>
+            <h2>Yeni Nesil Güvenlik Adımları</h2>
+            <ul>
+                <li>İki faktörlü doğrulama (2FA)</li>
+                <li>Gelişmiş güvenlik duvarları (WAF)</li>
+                <li>DDoS saldırılarına karşı proaktif önlemler</li>
+                <li>Düzenli güvenlik testleri ve log takibi</li>
+            </ul>
+            <h2>Yedekleme Stratejisi</h2>
+            <p>Düzenli ve otomatik yedekleme sistemleri, olası veri kayıplarına karşı en iyi korumadır.</p>
+            <h2>Sonuç</h2>
+            <p>2025’te başarılı bir site yönetimi, güçlü bir güvenlik stratejisi ile mümkündür.</p>
+        `,
+        category: "site-security",
+        date: "28 Ağustos 2025",
+        readTime: "15 dk",
+        author: "Web Master",
+        tags: ["Güvenlik", "SSL", "Firewall", "WAF"],
+        popular: true
+    },
+    {
+        id: 11,
+        title: "2025'te Mobil Uygulama Entegrasyonu",
+        excerpt: "Web siteleri için mobil uygulama entegrasyonunun avantajları ve püf noktaları.",
+        content: `
+            <p>Mobil uygulamalarla entegre web siteleri, kullanıcı deneyimini üst düzeye çıkarıyor. Artık kullanıcılar sadece siteye girmekle yetinmiyor; aynı ekosistem içinde mobil uygulamalara da ihtiyaç duyuyor.</p>
+            <h2>Avantajlar</h2>
+            <ul>
+                <li>Push bildirimleri ile kullanıcı etkileşimini artırma</li>
+                <li>Daha hızlı erişim ve offline kullanım imkanı</li>
+                <li>Kullanıcı sadakatini artırma</li>
+            </ul>
+            <h2>Başarılı Entegrasyon İçin İpuçları</h2>
+            <p>API entegrasyonlarının sorunsuz çalışması, kullanıcı deneyimini büyük ölçüde etkiler. Ayrıca uygulama arayüzünün web sitesi tasarımı ile uyumlu olması kritik önem taşır.</p>
+        `,
+        category: "mobile-integration",
+        date: "30 Ağustos 2025",
+        readTime: "10 dk",
+        author: "Web Master",
+        tags: ["Mobil", "Uygulama", "UX", "Performans"],
+        popular: false
+    },
+    {
+        id: 12,
+        title: "Core Web Vitals 2025: Yeni Ölçütler ve İpuçları",
+        excerpt: "Google'ın yeni metrikleri ile sitenizin performansını artırın.",
+        content: `
+            <p>Google, 2025'te Core Web Vitals metriklerinde güncellemeler yaptı. Bu güncellemeler, kullanıcı deneyimini daha doğru ölçmeye ve optimize etmeye yardımcı oluyor.</p>
+            <h2>Yeni Metrikler</h2>
+            <ul>
+                <li>Kapsamlı yükleme süresi (Total Load)</li>
+                <li>Dinamik içerik etkileşim hızı</li>
+                <li>Kullanıcı odaklı görsel kararlılık</li>
+            </ul>
+            <h2>Optimizasyon Teknikleri</h2>
+            <p>Render önceliğini düzenlemek, görselleri sıkıştırmak ve gereksiz kodları kaldırmak bu metriklerde daha yüksek puan almanıza yardımcı olur.</p>
+            <h2>Sonuç</h2>
+            <p>Yeni Core Web Vitals ölçütleri, web master’lar için site kalitesini artırma fırsatı sunuyor.</p>
+        `,
+        category: "core-web-vitals",
+        date: "2 Eylül 2025",
+        readTime: "14 dk",
+        author: "Web Master",
+        tags: ["Core Web Vitals", "SEO", "Performans", "Google"],
+        popular: true
+    },
+    {
+        id: 13,
+        title: "Sosyal Medya ile Web Trafiğini Artırma Yöntemleri",
+        excerpt: "Sosyal platformlardan web sitenize daha fazla ziyaretçi çekmenin etkili yolları.",
+        content: `
+            <p>Sosyal medya, web trafiğini artırmak için güçlü bir araçtır. Doğru stratejilerle hem marka bilinirliğinizi hem de organik ziyaretçi sayınızı artırabilirsiniz.</p>
+            <h2>Stratejiler</h2>
+            <ul>
+                <li>Düzenli ve ilgi çekici paylaşımlar hazırlayın</li>
+                <li>Trendleri takip ederek hashtag stratejileri geliştirin</li>
+                <li>Influencer iş birlikleri ile kitlenizi büyütün</li>
+            </ul>
+            <h2>Platform Bazlı İpuçları</h2>
+            <p>Instagram için görsel optimizasyon, LinkedIn için profesyonel içerik, YouTube için eğitici videolar hazırlamak önemlidir.</p>
+            <h2>Sonuç</h2>
+            <p>Sosyal medya entegrasyonu, web sitenizin trafik kaynağını çeşitlendirir ve daha geniş bir kitleye ulaşmanızı sağlar.</p>
+        `,
+        category: "social-traffic",
+        date: "5 Eylül 2025",
+        readTime: "12 dk",
+        author: "Web Master",
+        tags: ["Sosyal Medya", "Trafik", "SEO", "Marketing"],
+        popular: false
     }
 ];
 
@@ -569,3 +737,37 @@ function initForms() {
         });
     });
 }
+
+function matchFeaturedHeight() {
+  const featured = document.querySelector('.featured-post');
+  const smallPosts = document.querySelector('.small-posts');
+  const p = featured.querySelector('p');
+  const readMoreText = ' Devamını Oku';
+
+  if (!featured || !smallPosts) return;
+
+  // Sağdaki alanın yüksekliğini al
+  const height = smallPosts.offsetHeight;
+  featured.style.height = height + 'px';
+
+  // Satır yüksekliğini al
+  const lineHeight = parseFloat(getComputedStyle(p).lineHeight);
+
+  // Maksimum satır sayısı (son satır için link alanı bırak)
+  const maxLines = Math.floor(height / lineHeight) - 1;
+
+  // Kelime bazlı kesme
+  const words = p.innerText.split(' ');
+  const approxWordsPerLine = 10; // yaklaşık kelime sayısı
+  if (words.length > maxLines * approxWordsPerLine) {
+    const truncated = words.slice(0, maxLines * approxWordsPerLine).join(' ');
+    p.innerHTML = truncated + '<a href="#" class="read-more">' + ' ...' + '</a>';
+  } else {
+    p.innerHTML = p.innerText + '<a href="#" class="read-more">' + ' ...' + '</a>';
+  }
+}
+
+// Sayfa yüklendiğinde ve yeniden boyutlandırıldığında çalıştır
+window.addEventListener('load', matchFeaturedHeight);
+window.addEventListener('resize', matchFeaturedHeight);
+
