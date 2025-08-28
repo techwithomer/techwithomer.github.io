@@ -995,7 +995,7 @@ nav {
 /* Blog Page */
 .blog-content {
   padding: 80px 0;
-  background: var(--bg-secondary);
+  background: #fff;
 }
 
 .blog-layout {
@@ -1155,7 +1155,7 @@ nav {
 /* Blog Detail */
 .blog-detail {
   padding: 80px 0;
-  background: var(--bg-secondary);
+  background: #fff;
 }
 
 .blog-article {
@@ -1415,7 +1415,7 @@ nav {
 /* FAQ */
 .faq {
   padding: 80px 0;
-  background: var(--bg-secondary);
+  background: #fff;
 }
 
 .faq-container {
