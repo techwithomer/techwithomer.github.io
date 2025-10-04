@@ -488,24 +488,7 @@ function initNavigation() {
 }
 
 // Initialize page-specific content
-function initializePageContent() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    
-    switch (currentPage) {
-        case 'index.html':
-        case '':
-            loadBlogPreview();
-            break;
-        case 'blog.html':
-            loadBlogPosts();
-            loadBlogSidebar();
-            initBlogFilters();
-            break;
-        case 'blog-detail.html':
-            loadBlogDetail();
-            break;
-    }
-}
+
 
 // Load blog preview for homepage
 function loadBlogPreview() {
@@ -771,3 +754,138 @@ function matchFeaturedHeight() {
 window.addEventListener('load', matchFeaturedHeight);
 window.addEventListener('resize', matchFeaturedHeight);
 
+const sliderData = [
+    {
+        id: 1,
+        title: "Web Sitenizi Hızlandırın",
+        subtitle: "Performans Optimizasyonu ile Ziyaretçilerinizi Memnun Edin",
+        buttonText: "Hemen Başlayın",
+        buttonLink: "#",
+        bgColor: "#583bc9", // Mor
+        textColor: "white"
+    },
+    {
+        id: 2,
+        title: "2025 SEO Trendleri",
+        subtitle: "Arama Motorlarında Zirveye Çıkmanın Yolları",
+        buttonText: "Trendleri Keşfet",
+        buttonLink: "#",
+        bgColor: "#1abc9c", // Sarı
+        textColor: "black"
+    },
+    {
+        id: 3,
+        title: "Mobil Uyumlu Tasarım",
+        subtitle: "Responsive Tasarımın Temelleri ve İpuçları",
+        buttonText: "Detayları Gör",
+        buttonLink: "#",
+        bgColor: "#3498db", // Açık Mavi
+        textColor: "black"
+    }
+];
+
+// Slider'ı başlatma fonksiyonu (index.html'de çalışacak)
+function initHeroSlider() {
+    const heroSection = document.querySelector('.hero');
+    if (!heroSection) return;
+
+    // Slaytları ve navigasyonu HTML'e ekle
+    heroSection.innerHTML = `
+        <div class="hero-slider" id="heroSlider">
+            ${sliderData.map((slide, index) => `
+                <div class="slide" data-index="${index}" style="background-color: ${slide.bgColor}; color: ${slide.textColor};">
+                    <div class="container">
+                        <h2 style="color: ${slide.textColor}; font-size: 28px;">${slide.title}</h2>
+                        <br />
+                        <a href="${slide.buttonLink}" class="btn btn-primary" style="background-color: ${slide.textColor}; color: ${slide.bgColor};">${slide.buttonText}</a>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+        <button class="slider-nav-btn" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-nav-btn" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+        <div class="slider-dots" id="sliderDots">
+            ${sliderData.map((_, index) => `<span class="dot" data-index="${index}"></span>`).join('')}
+        </div>
+    `;
+
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.getElementById('prevSlide');
+    const nextBtn = document.getElementById('nextSlide');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        // Döngüsel geçiş (circular)
+        currentSlide = (index + slides.length) % slides.length; 
+
+        // Slaytları güncelle
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === currentSlide) {
+                slide.classList.add('active');
+            }
+        });
+
+        // Dotları güncelle
+        dots.forEach((dot, i) => {
+            dot.classList.remove('active');
+            if (i === currentSlide) {
+                dot.classList.add('active');
+            }
+        });
+    }
+
+    // Otomatik oynatmayı başlat
+    function startAutoSlide() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000); // 5 saniyede bir slayt değiştir
+    }
+
+    // Olay Dinleyicileri
+    nextBtn.addEventListener('click', () => {
+        showSlide(currentSlide + 1);
+        startAutoSlide(); // Kullanıcı etkileşiminden sonra zamanlayıcıyı sıfırla
+    });
+
+    prevBtn.addEventListener('click', () => {
+        showSlide(currentSlide - 1);
+        startAutoSlide(); // Kullanıcı etkileşiminden sonra zamanlayıcıyı sıfırla
+    });
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            const index = parseInt(this.dataset.index);
+            showSlide(index);
+            startAutoSlide(); // Kullanıcı etkileşiminden sonra zamanlayıcıyı sıfırla
+        });
+    });
+
+    // Başlangıçta ilk slaytı göster ve otomatik oynatmayı başlat
+    showSlide(0);
+    startAutoSlide();
+}
+
+// initializePageContent'i güncelleyin
+function initializePageContent() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    switch (currentPage) {
+        case 'index.html':
+        case '':
+            initHeroSlider(); // Ana sayfa için slider'ı çağır
+            loadBlogPreview();
+            break;
+        case 'blog.html':
+            loadBlogPosts();
+            loadBlogSidebar();
+            initBlogFilters();
+            break;
+        case 'blog-detail.html':
+            loadBlogDetail();
+            break;
+    }
+}
