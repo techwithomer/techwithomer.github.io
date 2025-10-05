@@ -761,8 +761,8 @@ const sliderData = [
         subtitle: "Performans Optimizasyonu ile Ziyaretçilerinizi Memnun Edin",
         buttonText: "Hemen Başlayın",
         buttonLink: "#",
-        bgColor: "#583bc9", // Mor
-        textColor: "white"
+        bgColor: "#1abc9c", // Mor
+        textColor: "black"
     },
     {
         id: 2,
@@ -770,7 +770,7 @@ const sliderData = [
         subtitle: "Arama Motorlarında Zirveye Çıkmanın Yolları",
         buttonText: "Trendleri Keşfet",
         buttonLink: "#",
-        bgColor: "#1abc9c", // Sarı
+        bgColor: "#E9B1C2", // Sarı
         textColor: "black"
     },
     {
