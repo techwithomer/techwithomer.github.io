@@ -8,7 +8,7 @@
     <meta name="keywords" content="SEO uzmanı, freelance seo, techwithomer, seo uyumlu şablonlar, teknik seo analizi, google sıralama artırma">
     <link rel="canonical" href="https://techwithomer.github.io" />
     
-    <!-- Font Awesome (Ücretsiz Sürüm) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Google Fonts: Inter -->
@@ -35,7 +35,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-DT1LZNLXEZ');
     </script>
 
@@ -114,6 +113,7 @@
             font-size: 24px;
             text-transform: uppercase;
             letter-spacing: -1px;
+            z-index: 1001;
         }
 
         .logo span { color: var(--primary); }
@@ -129,6 +129,14 @@
         }
 
         .nav-links a:hover { color: var(--primary); }
+
+        /* Mobil Menü Butonu */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
 
         /* --- BUTONLAR --- */
         .btn {
@@ -155,7 +163,7 @@
             text-align: center;
             padding: 100px 20px;
             background: var(--white);
-            border-bottom: 3px solid var(--dark);
+            border: 3px solid var(--dark);
             margin-bottom: 50px;
         }
 
@@ -187,6 +195,7 @@
             transition: var(--transition);
             position: relative;
             padding: 30px;
+            cursor: pointer;
         }
 
         .card:hover {
@@ -212,7 +221,7 @@
             margin-bottom: 15px;
         }
 
-        /* --- EKSTRA BÖLÜMLER (İstatistik, Süreç vb.) --- */
+        /* --- EKSTRA BÖLÜMLER --- */
         .stats-bar {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -259,11 +268,32 @@
             gap: 40px;
         }
 
-        /* Responsive */
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: 0.4s;
+                border-top: 3px solid var(--dark);
+            }
+
+            .nav-links.active { left: 0; }
+
+            .nav-links a { font-size: 20px; }
+
             .hero { padding: 60px 20px; }
             .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            
+            .nav-content .btn { display: none; } /* Mobilde butonu menü içine de alabilirsiniz, şimdilik gizlendi */
         }
     </style>
 </head>
@@ -274,11 +304,17 @@
         <nav>
             <div class="container nav-content">
                 <a href="#" class="logo" onclick="showPage('home')">TECH<span>WITH</span>OMER</a>
-                <ul class="nav-links">
-                    <li><a onclick="showPage('home')"><i class="fa-solid fa-house"></i> Uzmanlık</a></li>
-                    <li><a onclick="showPage('templates')"><i class="fa-solid fa-layer-group"></i> SEO Şablonları</a></li>
-                    <li><a onclick="showPage('blog')"><i class="fa-solid fa-book"></i> SEO Rehberi</a></li>
+                
+                <div class="menu-toggle" id="mobile-menu-icon" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <ul class="nav-links" id="nav-list">
+                    <li><a onclick="showPage('home'); toggleMenu()"><i class="fa-solid fa-house"></i> Uzmanlık</a></li>
+                    <li><a onclick="showPage('templates'); toggleMenu()"><i class="fa-solid fa-layer-group"></i> SEO Şablonları</a></li>
+                    <li><a onclick="showPage('blog'); toggleMenu()"><i class="fa-solid fa-book"></i> SEO Rehberi</a></li>
                 </ul>
+                
                 <button class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Teklif Al</button>
             </div>
         </nav>
@@ -299,21 +335,20 @@
 
             <!-- İstatistikler -->
             <div class="stats-bar">
-                <div class="stat-item"><h2>0+</h2><p>Mutlu Müşteri</p></div>
+                <div class="stat-item"><h2>20+</h2><p>Mutlu Müşteri</p></div>
                 <div class="stat-item"><h2>%300</h2><p>Ortalama Trafik Artışı</p></div>
-                <div class="stat-item"><h2>5+</h2><p>SEO Şablonu</p></div>
+                <div class="stat-item"><h2>15+</h2><p>SEO Şablonu</p></div>
                 <div class="stat-item"><h2>6+</h2><p>Yıllık Deneyim</p></div>
             </div>
 
-            <!-- Neler Sunuyorum? -->
+            <!-- Uzmanlık Alanları -->
             <div style="margin-top: 80px;">
                 <h2 style="font-size: 32px; text-align: center; font-weight: 800; margin-bottom: 10px;">Uzmanlık Alanlarım</h2>
-                <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Dijital varlığınızı güçlendirmek için ihtiyacınız olan tüm araçlar.</p>
                 <div class="grid">
                     <div class="card">
                         <i class="fa-solid fa-gears main-icon"></i>
                         <h3>Teknik SEO</h3>
-                        <p>Sayfa hızı, site haritaları ve yapılandırılmış verilerle Google botları için "anlaşılır" bir site oluşturun.</p>
+                        <p>Sayfa hızı, site haritaları ve yapılandırılmış verilerle Google botları için "anlaşılır" bir site.</p>
                     </div>
                     <div class="card">
                         <i class="fa-solid fa-pen-fancy main-icon"></i>
@@ -323,45 +358,54 @@
                     <div class="card">
                         <i class="fa-solid fa-chart-line main-icon"></i>
                         <h3>Dönüşüm (CRO)</h3>
-                        <p>Gelen trafik sadece sayı değildir. Ziyaretçileri müşteriye dönüştürecek stratejileri uyguluyoruz.</p>
+                        <p>Gelen trafik sadece sayı değildir. Ziyaretçileri müşteriye dönüştürecek stratejiler.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Neden Ben? ve Süreç Bölümü -->
+            <!-- Süreç ve Neden? -->
             <div class="grid" style="margin-top: 80px; align-items: start;">
                 <div style="background: var(--white); padding: 40px; border: 3px solid var(--dark);">
-                    <h2 style="font-size: 28px; margin-bottom: 20px;">Neden TechWithOmer?</h2>
+                    <h2 style="font-size: 28px; margin-bottom: 20px;">Neden Ben?</h2>
                     <ul style="display: flex; flex-direction: column; gap: 15px;">
-                        <li><i class="fa-solid fa-check-double" style="color: var(--secondary);"></i> Şeffaf ve Haftalık Raporlama</li>
-                        <li><i class="fa-solid fa-check-double" style="color: var(--secondary);"></i> Uzun Vadeli ve Kalıcı Sıralamalar</li>
-                        <li><i class="fa-solid fa-check-double" style="color: var(--secondary);"></i> Sektöre Özel SEO Çözümleri</li>
-                        <li><i class="fa-solid fa-check-double" style="color: var(--secondary);"></i> 7/24 Teknik Destek Garantisi</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--secondary);"></i> Şeffaf Raporlama</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--secondary);"></i> Kalıcı Sıralamalar</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--secondary);"></i> Sektöre Özel Çözümler</li>
                     </ul>
                 </div>
                 <div>
                     <h2 style="font-size: 28px; margin-bottom: 20px;">Nasıl Çalışıyorum?</h2>
                     <div class="process-step">
                         <div class="step-number">1</div>
-                        <div>
-                            <strong>Derinlemesine Analiz</strong>
-                            <p>Sektörünüzü ve rakiplerinizi en ince ayrıntısına kadar inceliyorum.</p>
-                        </div>
+                        <div><strong>Derinlemesine Analiz</strong><p>Rakipleri ve sektörü inceliyorum.</p></div>
                     </div>
                     <div class="process-step">
                         <div class="step-number">2</div>
-                        <div>
-                            <strong>Strateji ve Yol Haritası</strong>
-                            <p>Hedef odaklı, gerçekçi ve ölçülebilir bir plan hazırlıyorum.</p>
-                        </div>
+                        <div><strong>Strateji</strong><p>Ölçülebilir bir plan hazırlıyorum.</p></div>
                     </div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div>
-                            <strong>Uygulama ve Optimizasyon</strong>
-                            <p>Hızlı aksiyonlarla teknik ve içerik hatalarını gideriyorum.</p>
-                        </div>
-                    </div>
+                </div>
+            </div>
+
+            <!-- ANA SAYFA SON BLOG YAZILARI (YENİ EKLENDİ) -->
+            <div style="margin-top: 80px;">
+                <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 10px;">Son Blog Yazıları</h2>
+                <p style="margin-bottom: 30px; color: var(--text-muted);">SEO dünyasından en son haberler ve taktikler.</p>
+                <div class="grid">
+                    <article class="card" onclick="openBlog('Yapay Zeka ve SEO', 'AI araçlarını kullanarak nasıl trafik çekilir?')">
+                        <i class="fa-solid fa-robot main-icon"></i>
+                        <span class="card-tag">Yeni</span>
+                        <h3>Yapay Zeka SEO Stratejisi</h3>
+                        <p>SGE ve AI Overviews döneminde ayakta kalmanın yolları.</p>
+                    </article>
+                    <article class="card" onclick="openBlog('Hızın Önemi', 'LCP ve CLS değerleri neden düşürülmeli?')">
+                        <i class="fa-solid fa-bolt main-icon"></i>
+                        <span class="card-tag">Teknik</span>
+                        <h3>Sayfa Hızı Rehberi</h3>
+                        <p>Web sitemizi 1 saniyenin altına nasıl düşürürüz?</p>
+                    </article>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <button class="btn btn-outline" onclick="showPage('blog')">Tüm Yazıları Gör</button>
                 </div>
             </div>
         </section>
@@ -372,12 +416,9 @@
                 <h2 style="font-size: 40px; font-weight: 800;">SEO Uyumlu Şablonlar</h2>
                 <p>Zaman kaybetmeyin, SEO altyapısı hazır profesyonel bir başlangıç yapın.</p>
             </header>
-            
             <div class="grid">
                 <article class="card" style="padding: 0;">
-                    <div style="height: 180px; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white; font-size: 40px;">
-                        <i class="fa-solid fa-stethoscope"></i>
-                    </div>
+                    <div style="height: 180px; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white; font-size: 40px;"><i class="fa-solid fa-stethoscope"></i></div>
                     <div style="padding: 25px;">
                         <span class="card-tag">Sağlık</span>
                         <h3>Klinik & Doktor</h3>
@@ -385,27 +426,12 @@
                         <a href="#" class="btn btn-outline" style="width: 100%; justify-content: center;">Demoyu Gör</a>
                     </div>
                 </article>
-
                 <article class="card" style="padding: 0;">
-                    <div style="height: 180px; background: var(--secondary); display: flex; align-items: center; justify-content: center; color: white; font-size: 40px;">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </div>
+                    <div style="height: 180px; background: var(--secondary); display: flex; align-items: center; justify-content: center; color: white; font-size: 40px;"><i class="fa-solid fa-cart-shopping"></i></div>
                     <div style="padding: 25px;">
                         <span class="card-tag">E-Ticaret</span>
                         <h3>Hızlı Satış Mağazası</h3>
-                        <p>Mobil öncelikli, Core Web Vitals uyumlu satış teması.</p><br>
-                        <a href="#" class="btn btn-outline" style="width: 100%; justify-content: center;">Demoyu Gör</a>
-                    </div>
-                </article>
-
-                <article class="card" style="padding: 0;">
-                    <div style="height: 180px; background: var(--dark); display: flex; align-items: center; justify-content: center; color: white; font-size: 40px;">
-                        <i class="fa-solid fa-gavel"></i>
-                    </div>
-                    <div style="padding: 25px;">
-                        <span class="card-tag">Kurumsal</span>
-                        <h3>Hukuk & Danışmanlık</h3>
-                        <p>Otorite kuran, güven veren profesyonel blog altyapısı.</p><br>
+                        <p>Mobil öncelikli, Core Web Vitals uyumlu tema.</p><br>
                         <a href="#" class="btn btn-outline" style="width: 100%; justify-content: center;">Demoyu Gör</a>
                     </div>
                 </article>
@@ -418,22 +444,19 @@
                 <h2 style="font-size: 40px; font-weight: 800;">SEO & Teknoloji Rehberi</h2>
                 <p>Google sıralamalarınızı yükseltecek ücretsiz ipuçları.</p>
             </header>
-
             <div class="grid">
                 <article class="card" onclick="openBlog('Yapay Zeka ve SEO', 'AI araçlarını kullanarak nasıl trafik çekilir?')">
                     <i class="fa-solid fa-robot main-icon"></i>
                     <span class="card-tag">2025 Trendleri</span>
                     <h3>Yapay Zeka SEO Stratejisi</h3>
-                    <p>SGE ve AI Overviews döneminde ayakta kalmanın yolları.</p>
+                    <p>SGE döneminde ayakta kalmanın yolları.</p>
                 </article>
-
                 <article class="card" onclick="openBlog('Hızın Önemi', 'LCP ve CLS değerleri neden düşürülmeli?')">
                     <i class="fa-solid fa-bolt main-icon"></i>
                     <span class="card-tag">Teknik SEO</span>
                     <h3>Sayfa Hızı Rehberi</h3>
-                    <p>Web sitemizi 1 saniyenin altına nasıl düşürürüz?</p>
+                    <p>Web sitemizi hızlandırma teknikleri.</p>
                 </article>
-
                 <article class="card" onclick="openBlog('Yerel SEO', 'Haritalarda 1. sıraya çıkma taktikleri.')">
                     <i class="fa-solid fa-map-location-dot main-icon"></i>
                     <span class="card-tag">Local SEO</span>
@@ -461,28 +484,23 @@
                 <p style="margin-top: 10px; opacity: 0.8; max-width: 300px;">SEO ve dijital stratejilerle işletmenizi yarına hazırlıyoruz.</p>
             </div>
             <div style="text-align: center;">
-                <p>&copy; 2025 TechWithOmer. Tüm hakları saklıdır.</p>
+                <p>&copy; 2025 TechWithOmer.</p>
                 <div style="margin-top: 15px; font-size: 20px; display: flex; gap: 20px; justify-content: center;">
                     <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="#"><i class="fa-brands fa-github"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-            </div>
-            <div class="nav-links" style="display: flex; flex-direction: column; gap: 10px;">
-                <a onclick="showPage('home')">Anasayfa</a>
-                <a onclick="showPage('templates')">Şablonlar</a>
-                <a onclick="showPage('blog')">Blog</a>
             </div>
         </div>
     </footer>
 
     <script>
+        // Sayfa Değiştirme Fonksiyonu
         function showPage(pageId) {
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
             window.scrollTo(0, 0);
             
+            // Başlık Güncelleme
             const titles = {
                 'home': 'TechWithOmer | Freelance SEO Uzmanı',
                 'templates': 'SEO Uyumlu Site Şablonları | TechWithOmer',
@@ -491,16 +509,34 @@
             if(titles[pageId]) document.title = titles[pageId];
         }
 
+        // Mobil Menü Aç/Kapat
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-list');
+            const menuIcon = document.querySelector('#mobile-menu-icon i');
+            
+            navLinks.classList.toggle('active');
+            
+            // İkonu Değiştir (Hamburger <-> X)
+            if (navLinks.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        }
+
+        // Blog Detayını Aç
         function openBlog(title, intro) {
             document.getElementById('detail-title').innerText = title;
             document.getElementById('detail-text').innerHTML = `
                 <p><strong>${intro}</strong></p><br>
-                <p>SEO (Arama Motoru Optimizasyonu), günümüzde dijital pazarlamanın kalbi konumundadır. Doğru bir strateji ile reklam bütçenizi sıfıra indirip organik büyüme sağlayabilirsiniz.</p><br>
+                <p>SEO (Arama Motoru Optimizasyonu), günümüzde dijital pazarlamanın kalbi konumundadır. Doğru bir strateji ile organik büyüme sağlayabilirsiniz.</p><br>
                 <h3>Kritik Başarı Faktörleri</h3>
-                <p>1. <strong>Kullanıcı Deneyimi:</strong> Siteniz hızlı ve hatasız olmalı.</p>
-                <p>2. <strong>Otorite:</strong> Sektörünüzde referans gösterilen bir kaynak olmalısınız.</p>
-                <p>3. <strong>Analiz:</strong> Verileri okumalı ve sürekli test etmelisiniz.</p><br>
-                <p>Detaylı analiz ve danışmanlık için iletişim kanallarımızdan bize ulaşabilirsiniz.</p>
+                <p>1. <strong>Kullanıcı Deneyimi:</strong> Siteniz hızlı olmalı.</p>
+                <p>2. <strong>Otorite:</strong> Kaliteli backlink ve içerik.</p>
+                <p>3. <strong>Analiz:</strong> Verileri doğru okuma.</p><br>
+                <p>Detaylı analiz için bizimle iletişime geçin.</p>
             `;
             showPage('blog-detail');
         }
