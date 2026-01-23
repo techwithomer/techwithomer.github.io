@@ -236,10 +236,9 @@
                 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
                 <ul class="nav-links" id="navLinks">
                     <li><a onclick="showPage('home')">Anasayfa</a></li>
+                    <li><a onclick="showPage('about')">Hakkımda</a></li> <!-- Yeni Eklendi -->
                     <li><a onclick="showPage('blog')">Blog</a></li>
                     <li><a onclick="showPage('services')">SEO Hizmetleri</a></li>
-                    <li><a onclick="showPage('templates')">Şablonlar</a></li>
-                    <li><a onclick="showPage('portfolio')">Portföy</a></li>
                 </ul>
                 <input type="text" class="search-box" placeholder="İçerik ara..." onkeyup="handleSearch(event)">
             </nav>
@@ -295,6 +294,63 @@
             </div>
             <div class="grid" id="homeBlogGrid"></div>
         </section>
+<!-- ABOUT PAGE -->
+<section id="about" class="page">
+    <div class="section-header">
+        <h2>Hikayemiz ve Vizyonumuz</h2>
+        <p>Teknolojiyle büyüyen, veriyle güçlenen dijital bir yolculuk.</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 60px;">
+        <div style="flex: 1; min-width: 300px;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Dijital Dünyada <span style="color: var(--primary);">Fark Yaratıyoruz.</span></h3>
+            <p style="margin-bottom: 15px; color: var(--text-mid);">
+                <strong>Tech With Omer</strong>, dijital dünyadaki karmaşayı sadeleştirmek ve işletmelerin gerçek potansiyelini ortaya çıkarmak amacıyla kuruldu. Yazılımın gücünü, SEO'nun stratejik derinliğiyle birleştirerek sadece estetik değil, aynı zamanda performans odaklı çözümler sunuyoruz.
+            </p>
+            <p style="margin-bottom: 15px; color: var(--text-mid);">
+                Her projemizde "Kullanıcı ne ister?" ve "Arama motorları ne bekler?" sorularını merkezimize alıyoruz. Modern teknolojiler (React, Next.js, Flutter) ve güncel Google algoritmaları konusundaki uzmanlığımızla, markanızı rakiplerinizin bir adım önüne taşıyoruz.
+            </p>
+            <div style="display: flex; gap: 20px; margin-top: 30px;">
+                <div>
+                    <h4 style="color: var(--primary); font-size: 1.5rem;">5+</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-light);">Yıllık Deneyim</p>
+                </div>
+                <div style="border-left: 1px solid var(--border); padding-left: 20px;">
+                    <h4 style="color: var(--primary); font-size: 1.5rem;">1+</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-light);">Başarılı Proje</p>
+                </div>
+                <div style="border-left: 1px solid var(--border); padding-left: 20px;">
+                    <h4 style="color: var(--primary); font-size: 1.5rem;">%100</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-light);">Butik Hizmet</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex: 1; min-width: 300px; background: var(--secondary-light); padding: 40px; border-radius: 30px; text-align: center; border: 1px solid var(--border);">
+            <div style="width: 140px; height: 140px; background: var(--white); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">👨‍💻</div>
+            <h3 style="margin-bottom: 5px;">techwithomer</h3>
+            <p style="color: var(--primary); font-weight: 600; margin-bottom: 15px;">Full Stack Developer & SEO Uzmanı</p>
+            <p style="font-size: 0.9rem; color: var(--text-mid);">"Teknoloji bir amaç değil, hedeflerinize ulaşmak için kullandığımız en güçlü araçtır."</p>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <span class="category-badge bg-web">Misyon</span>
+            <h3>Neden Buradayız?</h3>
+            <p>Karmaşık teknolojik süreçleri, her işletmenin anlayabileceği ve verim alabileceği basit, hızlı ve etkili sistemlere dönüştürmek için buradayız.</p>
+        </div>
+        <div class="card">
+            <span class="category-badge bg-mobil">Değerler</span>
+            <h3>Şeffaflık & Güven</h3>
+            <p>Tüm süreçlerimizde raporlanabilir verilerle çalışıyor, müşterilerimize hayal değil, ölçülebilir dijital başarılar vaat ediyoruz.</p>
+        </div>
+        <div class="card">
+            <span class="category-badge bg-siber">Gelecek</span>
+            <h3>Sürekli Gelişim</h3>
+            <p>Teknoloji her gün değişiyor. Biz de her gün yeni bir şeyler öğrenerek stratejilerimizi güncelliyor, sitenizi her zaman 'güncel' tutuyoruz.</p>
+        </div>
+    </div>
+</section>
 
         <!-- BLOG PAGE -->
         <section id="blog" class="page">
@@ -364,23 +420,9 @@
             </div>
         </section>
 
-        <!-- TEMPLATES PAGE -->
-        <section id="templates" class="page">
-            <div class="section-header">
-                <h2>Premium Web Şablonları</h2>
-                <p>Hızlı kurulum, %100 SEO uyumu ve modern arayüzler.</p>
-            </div>
-            <div class="grid" id="templateGrid"></div>
-        </section>
+        
 
-        <!-- PORTFOLIO PAGE -->
-        <section id="portfolio" class="page">
-            <div class="section-header">
-                <h2>Referans Projeler</h2>
-                <p>Farklı sektörlerde dijital başarıya ulaştırdığımız bazı çalışmalar.</p>
-            </div>
-            <div class="grid" id="portfolioGrid"></div>
-        </section>
+       
 
         <!-- DETAIL PAGES -->
         <section id="detail-page" class="page">
@@ -400,9 +442,9 @@
                 <h4>Hizmetler</h4>
                 <ul>
                     <li><a>Teknik SEO</a></li>
-                    <li><a>Mobil Uygulama</a></li>
-                    <li><a>WordPress Kurulum</a></li>
-                    <li><a>Google Ads Yönetimi</a></li>
+                    <li><a>E-Ticaret SEO</a></li>
+                    <li><a>Yerel (Local) SEO</a></li>
+                    <li><a>Anahtar Kelime Analizi</a></li>
                 </ul>
             </div>
             <div>
@@ -439,17 +481,9 @@
             { id: 8, title: "Next.js ile Hızlı Web Siteleri", cat: "Web", desc: "Modern web teknolojileriyle performans artışı sağlayın.", content: "SSR ve SSG avantajları ile web sitenizi hızlandırın, SEO uyumlu hale getirin." }
         ];
 
-        const templates = [
-            { id: 1, title: "Kurumsal SEO Ajansı Teması", desc: "Elementor uyumlu, yüksek hızlı ve profesyonel WordPress teması." },
-            { id: 2, title: "E-Ticaret Landing Page", desc: "Dönüşüm odaklı, Tailwind CSS ile hazırlanmış satış sayfası." },
-            { id: 3, title: "Mobil App Tanıtım Şablonu", desc: "Uygulamanızı tanıtmak için minimalist ve modern tasarım." }
-        ];
+       
 
-        const portfolio = [
-            { id: 1, title: "Lojistik Takip Sistemi", client: "Ekol Lojistik", desc: "Mobil öncelikli, anlık takip sağlayan filo yönetim sistemi." },
-            { id: 2, title: "Global Haber Portalı", client: "NewsTech", desc: "Günlük 100k+ trafik alan, yüksek performanslı haber sitesi." },
-            { id: 3, title: "Siber Güvenlik Paneli", client: "CyberShield", desc: "Ağ trafiklerini anlık izleyen React tabanlı dashboard." }
-        ];
+       
 
         // --- CORE LOGIC ---
         function showPage(pageId) {
@@ -498,19 +532,6 @@
             `).join('');
         }
 
-        function renderPortfolio() {
-            const grid = document.getElementById('portfolioGrid');
-            grid.innerHTML = portfolio.map(p => `
-                <div class="card">
-                    <div class="port-img" style="background:#eee"></div>
-                    <span class="category-badge bg-web">${p.client}</span>
-                    <h3>${p.title}</h3>
-                    <p>${p.desc}</p>
-                    <button class="btn btn-primary" onclick="alert('Proje detayları hazırlanıyor.')">Projeyi İncele</button>
-                </div>
-            `).join('');
-        }
-
         function viewDetail(type, id) {
             const content = document.getElementById('detailContent');
             const data = blogPosts.find(x => x.id === id);
@@ -541,7 +562,6 @@
             renderBlog(blogPosts.slice(0, 3), 'homeBlogGrid');
             renderBlog(blogPosts);
             renderTemplates();
-            renderPortfolio();
         };
     </script>
 </body>
