@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://techwithomer.github.io/sitemap.xml

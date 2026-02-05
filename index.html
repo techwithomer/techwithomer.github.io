@@ -3,825 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech With Omer | Profesyonel SEO Danışmanlığı & Veri Odaklı Büyüme</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Eklendi -->
+    <!-- SEO KRİTİK: Title ve Description -->
+    <title>Tekirdağ Web Tasarım ve SEO Eğitimi | Tech With Omer</title>
+    <meta name="description" content="Tekirdağ'da modern web tasarım teknikleri ve SEO algoritmaları üzerine teknik rehber. Google sıralamalarında yükselme stratejilerini ve kodlama temellerini öğrenin.">
+    <link rel="canonical" href="https://techwithomer.github.io/" />
+
+
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <style>
-        :root {
-            --bg-color: #FFFFFF;
-            --primary-blue: #1E3A8A;   /* Tatlı Koyu Mavi */
-            --primary-yellow: #B45309; /* Tatlı Koyu Sarı/Amber */
-            --primary-green: #064E3B;  /* Tatlı Koyu Yeşil */
-            --dark-black: #000000;    /* Modern Siyah */
-            --light-gray: #F9FAFB;
-            --border: #E5E7EB;
-            --text-dark: #1F2937;
-            --text-mid: #4B5563;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        /* --- HEADER --- */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 3px solid var(--primary-blue);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--dark-black); cursor: pointer; }
-        .logo span { color: var(--primary-yellow); }
-        .nav-links { display: flex; gap: 25px; }
-        .nav-links a { font-weight: 600; font-size: 0.9rem; cursor: pointer; }
-        .nav-links a:hover { color: var(--primary-blue); }
-
-        /* --- PAGES GENERAL --- */
-        .page { display: none; padding: 60px 0; animation: fadeIn 0.4s ease; }
-        .page.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 2.2rem; color: var(--dark-black); margin-bottom: 10px; }
-        .section-title div { width: 60px; height: 4px; background: var(--primary-yellow); margin: 0 auto; border-radius: 2px; }
-
-        /* --- HERO --- */
-        .hero { background: linear-gradient(135deg, var(--light-gray) 0%, #e5e7eb 100%); padding: 100px 40px; border-radius: 30px; text-align: center; border: 1px solid var(--border); margin-bottom: 60px; position: relative; overflow: hidden;}
-        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
-        .hero h1 span { color: var(--primary-blue); }
-        .hero p { max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem; color: var(--text-mid); }
-        
-        .btn { padding: 14px 35px; border-radius: 12px; font-weight: 700; cursor: pointer; border: none; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; }
-        .btn-primary { background: var(--primary-blue); color: white; }
-        .btn-primary:hover { background: #162d6b; transform: scale(1.05); }
-        .btn-success { background: var(--primary-green); color: white; }
-        .btn-yellow { background: var(--primary-yellow); color: white; }
-
-        /* --- HOME EXTRA SECTIONS --- */
-        .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 80px; text-align: center; }
-        .stat-item h3 { font-size: 2.5rem; color: var(--primary-blue); }
-        .stat-item p { font-size: 0.9rem; font-weight: 600; color: var(--text-mid); }
-
-        .process-section { margin: 80px 0; }
-        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
-        .process-step { text-align: center; padding: 20px; }
-        .process-step i { font-size: 2.5rem; color: var(--primary-yellow); margin-bottom: 20px; }
-        .process-step h4 { margin-bottom: 10px; }
-
-        /* --- CARDS & GRID --- */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 40px 30px; transition: 0.3s; position: relative; }
-        .card i { font-size: 2rem; color: var(--primary-blue); margin-bottom: 20px; }
-        .card:hover { transform: translateY(-5px); border-color: var(--primary-blue); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
-        .card h3 { margin-bottom: 15px; color: var(--dark-black); }
-        .category-badge { font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; color: white; margin-bottom: 15px; display: inline-block; text-transform: uppercase; }
-
-        /* --- ABOUT PAGE --- */
-        .about-content { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
-        .about-text { flex: 1; min-width: 300px; }
-        .about-image { flex: 1; min-width: 300px; background: var(--light-gray); padding: 40px; border-radius: 20px; border-left: 10px solid var(--primary-yellow); }
-
-        /* --- BLOG --- */
-        .pagination { display: flex; justify-content: center; gap: 10px; margin-top: 40px; }
-        .page-num { padding: 8px 16px; border: 1px solid var(--border); border-radius: 5px; cursor: pointer; font-weight: 600; }
-        .page-num.active { background: var(--primary-blue); color: white; border-color: var(--primary-blue); }
-        .blog-detail-view h1 { font-size: 2.5rem; margin-bottom: 20px; color: var(--dark-black); }
-        .meta-info { color: var(--text-mid); font-size: 0.9rem; margin-bottom: 30px; display: flex; gap: 20px; }
-        .content-body { font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); }
-        .back-btn { margin-bottom: 20px; display: inline-block; color: var(--primary-blue); font-weight: 700; cursor: pointer; }
-
-        /* --- FOOTER --- */
-        footer { background: var(--dark-black); color: white; padding: 60px 0 20px; margin-top: 80px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .footer-grid h4 { color: var(--primary-yellow); margin-bottom: 20px; }
-        .footer-grid li { margin-bottom: 10px; opacity: 0.7; font-size: 0.9rem; }
-        .footer-bottom { text-align: center; border-top: 1px solid #374151; padding-top: 20px; font-size: 0.8rem; opacity: 0.5; }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.5rem; }
-            .stats-bar { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        /* Masaüstünde gizle */
-.menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--dark-black);
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Mobilde göster */
-    }
-
-    .nav-links {
-        display: none; /* Başlangıçta kapalı */
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 20px;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        border-bottom: 3px solid var(--primary-blue);
-        z-index: 999;
-    }
-
-    /* Menü açıldığında çalışacak class */
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        text-align: center;
-        padding: 15px 0;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .nav-links li:last-child {
-        border-bottom: none;
-    }
-
-    /* Mobilde butonu küçült veya gizle (isteğe bağlı) */
-    nav .btn {
-        display: none; 
-    }
-}
-    </style>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DT1LZNLXEZ"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-DT1LZNLXEZ');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DT1LZNLXEZ');
     </script>
 </head>
 <body>
-
     <header>
-        <div class="container">
-            <!-- Mevcut kodun içinde nav etiketi şu şekilde güncellenmeli -->
-<nav>
-    <div class="logo" onclick="showPage('home')">techwith<span>omer.</span></div>
-    
-    <!-- Mobil Menü İkonu Buraya Eklendi -->
-    <div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">TECH<span>WITHOMER</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="blog.html">SEO & Tasarım Rehberi</a></li>
+                <li><a href="hakkimda.html">Vizyonumuz</a></li>
+            </ul>
+        </nav>
     </div>
-
-    <ul class="nav-links" id="nav-list">
-        <li><a onclick="showPage('home')">Anasayfa</a></li>
-        <li><a onclick="showPage('about')">Hakkımda</a></li>
-        <li><a onclick="showPage('services')">Hizmetler</a></li>
-        <li><a onclick="showPage('blog')">Blog</a></li>
-    </ul>
-    <!-- ... buton kısmı ... -->
-</nav>
-        </div>
-    </header>
-
+</header>
     <main class="container">
-        
-        <!-- HOME PAGE -->
-        <section id="home" class="page active">
-            <div class="hero">
-                <h1>Google'da Görünür Olun, <br><span>Trafiğinizi Katlayın.</span></h1>
-                <p>Teknik SEO denetimleri, anahtar kelime stratejileri ve otorite inşası ile markanızı arama motorlarında zirveye taşıyoruz. Veri odaklı büyüme için doğru yerdesiniz.</p>
-                <div style="display:flex; gap:15px; justify-content:center; flex-wrap: wrap;">
-                    <button class="btn btn-primary" onclick="showPage('services')">
-                        <i class="fas fa-chart-line"></i> SEO Çözümlerimiz
-                    </button>
-                    <button class="btn btn-yellow" onclick="showPage('blog')">
-                        <i class="fas fa-book-open"></i> SEO Rehberini Oku
-                    </button>
+        <section class="hero">
+            <h1>Tekirdağ Web Tasarım ve <br><span>SEO Stratejileri</span></h1>
+            <p>Google algoritmalarını ve modern web standartlarını Tekirdağ odaklı vaka analizleriyle öğrenin. Teknik derinliğe sahip içeriklerle dijital dünyada görünürlüğünüzü artırın.</p>
+            <div style="display:flex; gap:15px; justify-content:center;">
+                <a href="blog.html" class="btn btn-primary">Bilgi Bankasına Giriş</a>
+                <a href="hakkimda.html" class="btn btn-yellow">Eğitmen Profili</a>
+            </div>
+        </section>
+<!-- Tamamen Ücretsiz Bilgi Paylaşımı & Topluluk Bölümü -->
+<section id="bilgi-paylasim" style="padding: 80px 0; background-color: var(--light-gray);">
+    <div class="container">
+        <div class="about-content" style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap;">
+            
+            <!-- Sol Sütun: Misyon -->
+            <div style="flex: 1; min-width: 350px;">
+                <div style="display: inline-block; padding: 5px 15px; background: #e0e7ff; color: var(--primary-blue); border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px; text-transform: uppercase;">
+                    <i class="fas fa-book-reader"></i> Açık Kaynak Bilgi Bankası
                 </div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2;">
+                    Tekirdağ'ın Dijital <span style="color:var(--primary-blue)">Bilgi Kütüphanesi</span>
+                </h2>
+                <p>Tech With Omer, herhangi bir ticari amaç gütmeyen, Tekirdağ merkezli bir <b>dijital okuryazarlık projesidir.</b> Amacımız; web teknolojilerini, SEO algoritmalarını ve modern kodlama standartlarını herkes için erişilebilir kılmaktır.</p>
+                <br>
+                <p><b>Çorlu, Süleymanpaşa ve Çerkezköy</b> hattındaki tüm teknoloji meraklıları için hazırladığımız rehberler tamamen ücretsizdir. Burada sadece teknik deneyimlerimizi ve güncel sektör analizlerimizi paylaşıyoruz.</p>
+                
+                <ul style="margin-top: 25px; list-style: none;">
+                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-check-circle" style="color:var(--primary-green); margin-top: 5px;"></i>
+                        <span><b>Ücretsiz Rehberler:</b> Adım adım web tasarım ve SEO tekniklerini içeren blog serileri.</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-check-circle" style="color:var(--primary-green); margin-top: 5px;"></i>
+                        <span><b>Sektörel Analizler:</b> Google'ın son güncellemelerinin yerel pazara etkileri üzerine incelemeler.</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-check-circle" style="color:var(--primary-green); margin-top: 5px;"></i>
+                        <span><b>Açık Kaynak Vizyonu:</b> Hiçbir ücret veya abonelik gerektirmeyen şeffaf bilgi paylaşımı.</span>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Stats Bar (Yeni Başlayan/Butik Danışman Modu) -->
-<div class="stats-bar">
-    <div class="stat-item">
-        <h3>%100</h3>
-        <p>Proje Odaklılık</p> 
-        <!-- Az proje alıp her biriyle birebir ilgilendiğinizi vurgular -->
+            <div style="flex: 1; min-width: 300px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 1px solid var(--border); position: relative;">
+    
+    <div style="text-align: center; margin-bottom: 25px;">
+        <i class="fas fa-rocket" style="font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 15px;"></i>
+        <h3 style="font-size: 1.5rem;">Hızlı Başlangıç Rehberleri</h3>
+        <p style="font-size: 0.9rem; color: var(--text-mid);">Teknoloji yolculuğunuza en popüler kaynaklarımızla başlayın.</p>
     </div>
-    <div class="stat-item">
-        <h3>Güncel</h3>
-        <p>2025 Algoritma Uyumu</p>
-        <!-- Yeni başladığınız için en taze bilgilere sahip olduğunuzu vurgular -->
+
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+        <a href="blog.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px; padding: 15px; background: #f8fafc; border-radius: 12px; transition: 0.3s; border: 1px solid transparent;" onmouseover="this.style.borderColor='var(--primary-blue)'" onmouseout="this.style.borderColor='transparent'">
+            <div style="background: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <i class="fas fa-code" style="color: #6366f1;"></i>
+            </div>
+            <div>
+                <h4 style="font-size: 0.95rem; margin: 0;">Modern HTML5/CSS3 Rehberi</h4>
+                <small style="color: #666;">24 Ücretsiz Ders</small>
+            </div>
+        </a>
+
+        <a href="blog.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px; padding: 15px; background: #f8fafc; border-radius: 12px; transition: 0.3s; border: 1px solid transparent;" onmouseover="this.style.borderColor='var(--primary-blue)'" onmouseout="this.style.borderColor='transparent'">
+            <div style="background: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <i class="fas fa-chart-line" style="color: #10b981;"></i>
+            </div>
+            <div>
+                <h4 style="font-size: 0.95rem; margin: 0;">SEO Temelleri Sözlüğü</h4>
+                <small style="color: #666;">2024 Güncel Analizler</small>
+            </div>
+        </a>
+
+        <a href="blog.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px; padding: 15px; background: #f8fafc; border-radius: 12px; transition: 0.3s; border: 1px solid transparent;" onmouseover="this.style.borderColor='var(--primary-blue)'" onmouseout="this.style.borderColor='transparent'">
+            <div style="background: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <i class="fab fa-wordpress" style="color: #21759b;"></i>
+            </div>
+            <div>
+                <h4 style="font-size: 0.95rem; margin: 0;">WordPress Performans Ayarları</h4>
+                <small style="color: #666;">Hız Optimizasyonu</small>
+            </div>
+        </a>
     </div>
-    <div class="stat-item">
-        <h3>Detaylı</h3>
-        <p>Teknik SEO Denetimi</p>
-        <!-- Sayıdan ziyade işin kalitesine/derinliğine odaklanır -->
-    </div>
-    <div class="stat-item">
-        <h3>Birebir</h3>
-        <p>Şeffaf İletişim</p>
-        <!-- Kurumsal ajanslardaki 'muhatap bulamama' sorununa karşı bir avantajdır -->
+
+    <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee;">
+        <a href="blog.html" style="color: var(--primary-blue); font-weight: 600; text-decoration: none; font-size: 0.9rem;">Tüm Arşivi Görüntüle <i class="fas fa-arrow-right"></i></a>
     </div>
 </div>
 
-            <div class="section-title">
-                <h2>SEO Uzmanlık Alanlarımız</h2>
-                <p>İşletmenizin dijital dünyadaki arama motoru performansını en üst seviyeye çıkarıyoruz.</p>
-                <div></div>
-            </div>
-
-            <div class="grid">
-                <div class="card">
-                    <i class="fas fa-gears"></i>
-                    <h3>Teknik SEO</h3>
-                    <p>Core Web Vitals, site hızı optimizasyonu ve tarama bütçesi yönetimiyle teknik engelleri kaldırıyoruz.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-pen-nib"></i>
-                    <h3>İçerik Stratejisi</h3>
-                    <p>Kullanıcı niyetine (Search Intent) odaklı, E-E-A-T uyumlu ve semantik içerik planları hazırlıyoruz.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-link"></i>
-                    <h3>Otorite İnşası</h3>
-                    <p>Sektörel güvenilirliğinizi artıracak kaliteli ve doğal backlink profilleri oluşturuyoruz.</p>
-                </div>
-            </div>
-
-            <!-- Working Process -->
-            <div class="process-section">
-                <div class="section-title">
-                    <h2>SEO Çalışma Sürecimiz</h2>
-                    <div></div>
-                </div>
-                <div class="process-grid">
-                    <div class="process-step">
-                        <i class="fas fa-microscope"></i>
-                        <h4>1. Kapsamlı Denetim</h4>
-                        <p>Sitenizi 200'den fazla kritere göre analiz ediyoruz.</p>
-                    </div>
-                    <div class="process-step">
-                        <i class="fas fa-bullseye"></i>
-                        <h4>2. Strateji Belirleme</h4>
-                        <p>Rekabet analizi yaparak en karlı anahtar kelimeleri seçiyoruz.</p>
-                    </div>
-                    <div class="process-step">
-                        <i class="fas fa-screwdriver-wrench"></i>
-                        <h4>3. Uygulama</h4>
-                        <p>On-page ve teknik optimizasyonları hayata geçiriyoruz.</p>
-                    </div>
-                    <div class="process-step">
-                        <i class="fas fa-ranking-star"></i>
-                        <h4>4. Takip & Rapor</h4>
-                        <p>Sıralama ve trafik artışlarını şeffafça raporluyoruz.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT PAGE -->
-        <section id="about" class="page">
-            <div class="section-title">
-                <h2>Veri Odaklı SEO Hikayemiz</h2>
-                <div></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3 style="margin-bottom:15px; color: var(--primary-blue);">Algoritmalara Değil, Kullanıcıya Odaklı Başarı</h3>
-                    <p>Tech With Omer, arama motorlarının sürekli değişen algoritmalarını derinlemesine analiz eden ve markaların bu değişimlerden güçlenerek çıkmasını sağlayan bir SEO danışmanlık girişimidir.</p>
-                    <br>
-                    <p>Sadece "anahtar kelime" odaklı değil, sitenizin kullanıcı deneyimini (UX) ve teknik altyapısını mükemmelleştirerek sürdürülebilir bir organik büyüme sağlıyoruz. Bugüne kadar yerel ve global ölçekte onlarca markayı Google ilk sayfa ile tanıştırdık.</p>
-                </div>
-                <div class="about-image">
-                    <h4>Neden Bizimle Çalışmalısınız?</h4>
-                    <ul style="margin-top:15px;">
-                        <li style="margin-bottom:10px;"><i class="fas fa-check-circle" style="color:var(--primary-green)"></i> <strong>Teknik Uzmanlık:</strong> Kod seviyesinde SEO müdahaleleri yapabiliyoruz.</li>
-                        <li style="margin-bottom:10px;"><i class="fas fa-check-circle" style="color:var(--primary-green)"></i> <strong>Şeffaf Raporlama:</strong> Sadece trafik değil, dönüşüm odaklı metrikleri sunuyoruz.</li>
-                        <li style="margin-bottom:10px;"><i class="fas fa-check-circle" style="color:var(--primary-green)"></i> <strong>Güncel Stratejiler:</strong> Yapay zeka (SGE) ve güncel Google güncellemelerine tam uyum.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- SERVICES PAGE -->
-<section id="services" class="page">
-    <div class="section-title">
-        <h2>Uçtan Uca SEO Çözümleri</h2>
-        <div></div>
-        <br />
-        <p>Google ve diğer modern arama motorlarında sürdürülebilir başarı için 20 farklı disiplinde uzmanlık sunuyoruz.</p>
-    </div>
-    <div class="grid">
-        <!-- 1 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-yellow)">Yapay Zeka</span>
-            <h3>Yapay Zeka SEO (AEO)</h3>
-            <p>SearchGPT, Perplexity ve Google SGE gibi yapay zeka motorlarında markanızın "önerilen cevap" olarak sunulması için Arama Motoru Yanıt Optimizasyonu (AEO) sağlıyoruz. Botların içeriğinizi anlamlandırabilmesi için veriyi AI standartlarında yapılandırıyoruz.</p>
-        </div>
-        <!-- 2 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-blue)">Teknik</span>
-            <h3>Teknik SEO Audit</h3>
-            <p>Sitenizin kod yapısını, tarama bütçesini, indeksleme hatalarını ve sunucu yanıt sürelerini profesyonel araçlarla analiz ederek, Google botlarının sitenizi engelsiz bir şekilde taramasını ve anlamlandırmasını sağlıyoruz.</p>
-        </div>
-        <!-- 3 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-green)">Strateji</span>
-            <h3>Semantik İçerik Planlama</h3>
-            <p>Sadece anahtar kelimeye değil, konunun bütününe odaklanan LSI (Latent Semantic Indexing) stratejileriyle, sektörünüzdeki tüm alt kavramları kapsayan içerik haritaları oluşturarak uzmanlık puanınızı (EEAT) artırıyoruz.</p>
-        </div>
-        <!-- 4 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-yellow)">Yerel</span>
-            <h3>Local SEO & Harita</h3>
-            <p>İşletmenizin Google Haritalar'da ve yerel aramalarda (yakınımda aramaları) ilk sırada çıkması için Google İşletme Profili optimizasyonu, yerel citation çalışmaları ve bölgesel anahtar kelime stratejileri uyguluyoruz.</p>
-        </div>
-        <!-- 5 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--dark-black)">E-Ticaret</span>
-            <h3>E-Ticaret Dönüşüm SEO</h3>
-            <p>Ürün sayfalarınızın ve kategori ağaçlarınızın hem kullanıcı dostu hem de bot dostu olmasını sağlıyoruz. Sepete atma oranını artıran ve ürünlerin Google Alışveriş sonuçlarında çıkmasını sağlayan özel kurgular geliştiriyoruz.</p>
-        </div>
-        <!-- 6 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-blue)">Hız</span>
-            <h3>Core Web Vitals</h3>
-            <p>LCP, CLS ve INP gibi kritik kullanıcı deneyimi metriklerini analiz ediyor, sitenizin yüklenme hızını ve etkileşim kalitesini Google'ın "yeşil bölge" dediği en yüksek performans skorlarına ulaştırıyoruz.</p>
-        </div>
-        <!-- 7 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-green)">Link İnşası</span>
-            <h3>Otorite ve Backlink</h3>
-            <p>Sitenize gelen bağlantıların kalitesini analiz ediyor, spam içeren zararlı linkleri temizliyor ve markanız için yüksek otoriteli, tamamen doğal ve kalıcı backlink profilleri oluşturarak domain otoritenizi yükseltiyoruz.</p>
-        </div>
-        <!-- 8 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-yellow)">Uluslararası</span>
-            <h3>Global SEO (Hreflang)</h3>
-            <p>Birden fazla dilde yayın yapan siteler için doğru hreflang yapılandırması ve coğrafi hedefleme stratejileriyle, her ülkede doğru içeriğin doğru kullanıcıya gösterilmesini sağlayarak global organik trafiği yönetiyoruz.</p>
-        </div>
-        <!-- 9 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--dark-black)">Yapısal Veri</span>
-            <h3>Schema Markup (JSON-LD)</h3>
-            <p>Sitenize özel yapılandırılmış veri işaretlemeleri (Product, Review, FAQ, Article) ekleyerek, Google arama sonuçlarında yıldızlı puanlar, fiyat bilgileri ve sıkça sorulan sorular gibi zengin sonuçlarla (Rich Snippets) CTR artışı sağlıyoruz.</p>
-        </div>
-        <!-- 10 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-blue)">Kullanıcı Deneyimi</span>
-            <h3>SEO Odaklı UX Analizi</h3>
-            <p>Kullanıcıların sitenizde geçirdiği süreyi artırmak ve hemen çıkma oranını (Bounce Rate) düşürmek için navigasyon yapısını ve içerik yerleşimini Google'ın kullanıcı odaklı sinyallerine göre optimize ediyoruz.</p>
-        </div>
-        <!-- 11 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-green)">İçerik Denetimi</span>
-            <h3>Content Pruning (Budama)</h3>
-            <p>Trafik getirmeyen, güncelliğini yitirmiş veya zayıf içerikli sayfaları tespit ederek, bu sayfaları optimize ediyor, birleştiriyor veya kaldırarak sitenizin toplam tarama bütçesini ve otoritesini koruyoruz.</p>
-        </div>
-        <!-- 12 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-yellow)">Kurtarma</span>
-            <h3>Algoritma Ceza Yönetimi</h3>
-            <p>Google güncellemeleri sonrası trafik kaybı yaşayan veya manuel işlem cezası almış siteler için kriz yönetimi uyguluyor, hatayı tespit edip düzelterek sitenizin yeniden indekslenmesini ve eski gücüne kavuşmasını sağlıyoruz.</p>
-        </div>
-        <!-- 13 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--dark-black)">Mobil</span>
-            <h3>Mobile-First İndeksleme</h3>
-            <p>Google'ın artık tamamen mobil sürümleri baz alarak sıralama yapması nedeniyle, sitenizin mobil arayüzündeki tüm içerik ve teknik elementlerin kusursuz çalışmasını sağlıyoruz.</p>
-        </div>
-        <!-- 14 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-blue)">Görsel SEO</span>
-            <h3>Görsel Optimizasyon</h3>
-            <p>Resimlerinizin Google Görseller aramalarında trafik çekmesi için doğru Alt etiketleri, WebP format dönüşümü, dosya adı optimizasyonu ve resim site haritaları (Image Sitemaps) çalışmalarını yürütüyoruz.</p>
-        </div>
-        <!-- 15 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-green)">Video SEO</span>
-            <h3>YouTube & Video Ranking</h3>
-            <p>Web sitenizdeki videoların veya YouTube kanalınızın arama sonuçlarında öne çıkması için video şemaları, anahtar kelime odaklı açıklamalar ve doğru metadata yapılandırmaları sağlıyoruz.</p>
-        </div>
-        <!-- 16 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-yellow)">Haber SEO</span>
-            <h3>Google News Kaydı</h3>
-            <p>Haber siteleri veya bloglar için Google News ve Publisher Center optimizasyonlarını yaparak, içeriklerin "En Çok Okunan Haberler" sekmesinde ve Discover (Keşfet) alanında çıkmasını sağlıyoruz.</p>
-        </div>
-        <!-- 17 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--dark-black)">Analiz</span>
-            <h3>İleri Seviye Log Analizi</h3>
-            <p>Sunucu log dosyalarını analiz ederek Googlebot'un sitenizi ne sıklıkla ziyaret ettiğini, hangi sayfalarda vakit harcadığını ve hangi hatalarla karşılaştığını gerçek verilerle raporluyoruz.</p>
-        </div>
-        <!-- 18 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-blue)">Rekabet</span>
-            <h3>Derinlemesine Rakip Analizi</h3>
-            <p>Rakiplerinizin hangi kelimelerden trafik aldığını, backlink kaynaklarını ve içerik stratejilerini deşifre ederek, onların önüne geçmenizi sağlayacak "boşluk analizi" (Gap Analysis) raporları sunuyoruz.</p>
-        </div>
-        <!-- 19 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-green)">Dönüşüm</span>
-            <h3>Dönüşüm Oranı SEO (CRO)</h3>
-            <p>Gelen organik trafiğin sadece ziyaretçi olarak kalmamasını, potansiyel müşteriye veya satışa dönüşmesi için tıklama sonrası kullanıcı yolculuğunu ve form alanlarını optimize ediyoruz.</p>
-        </div>
-        <!-- 20 -->
-        <div class="card">
-            <span class="category-badge" style="background:var(--primary-yellow)">İç Linkleme</span>
-            <h3>Link Juice Dağıtımı</h3>
-            <p>Site içi linkleme yapısını düzenleyerek, yüksek otoriteye sahip sayfalarınızdan stratejik öneme sahip diğer sayfalarınıza "Link Juice" akışını sağlıyor ve tüm sitenin dengeli büyümesini tetikliyoruz.</p>
         </div>
     </div>
 </section>
-
-        <!-- BLOG PAGE -->
-        <section id="blog" class="page">
-            <div class="section-title">
-                <h2>SEO Dünyasından Güncel Bilgiler</h2>
-                <div></div>
-            </div>
-            <div class="grid" id="blog-grid"></div>
-            <div class="pagination" id="pagination"></div>
-        </section>
-
-        <!-- BLOG DETAIL PAGE -->
-        <section id="blog-detail" class="page">
-            <div class="blog-detail-view" id="blog-detail-content"></div>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container footer-grid">
-            <div>
-                <h3 class="logo" style="color:white; margin-bottom:20px;">techwith<span>omer.</span></h3>
-                <p style="opacity:0.7; font-size:0.9rem;">Dijital dünyada iz bırakmanız için modern ve veri odaklı SEO çözümleri üretiyoruz.</p>
-                <div style="margin-top:20px; display:flex; gap:15px; font-size: 1.2rem;">
-                    <i class="fab fa-linkedin" style="cursor:pointer"></i>
-                    <i class="fab fa-github" style="cursor:pointer"></i>
-                    <i class="fab fa-twitter" style="cursor:pointer"></i>
-                </div>
-            </div>
-            <div>
-                <h4>Hızlı Erişim</h4>
-                <ul>
-                    <li><a onclick="showPage('home')">Anasayfa</a></li>
-                    <li><a onclick="showPage('services')">Hizmetler</a></li>
-                    <li><a onclick="showPage('blog')">Blog</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Uzmanlıklar</h4>
-                <ul>
-                    <li>Teknik SEO Danışmanlığı</li>
-                    <li>Google Search Console</li>
-                    <li>Arama Niyeti Analizi</li>
-                    <li>Semantik İçerik Yazımı</li>
-                </ul>
-            </div>
-            <div>
-                <h4>İletişim</h4>
-                <ul>
-                    <!-- <li><i class="fas fa-envelope"></i> hello@techwithomer.com</li> -->
-                    <li><i class="fas fa-location-dot"></i> Tekirdağ, Türkiye</li>
-                </ul>
-            </div>
+<br />
+<br />
+        <!-- SEO İçin Anahtar Kelime Odaklı H2 -->
+        <div class="section-title">
+            <h2>Tekirdağ SEO ve Web Tasarım Rehberi</h2>
+            <p>Sektörel standartları belirleyen teknik modüller.</p>
+            <div></div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2025 Tech With Omer | SEO & Dijital Pazarlama. Tüm Hakları Saklıdır.
-        </div>
-    </footer>
-
-    <script>
-        // --- BLOG DATA (SEO FOCUS) ---
-        const posts = [
-    { 
-        id: 1, cat: "SEO", 
-        title: "2025 Google Algoritma Tahminleri ve Gelecek", 
-        desc: "Yapay zeka teknolojilerinin arama motoru algoritmalarına derinlemesine entegre edilmesiyle birlikte geleneksel SEO yöntemleri kökten değişiyor. Bu makalede, Google'ın Üretken Deneyim (SGE) sistemine nasıl uyum sağlayacağınızı, kullanıcı niyetinin (Search Intent) önemini ve AI botlarının içeriğinizi kaynak olarak göstermesi için yapmanız gereken teknik düzenlemeleri derinlemesine inceliyoruz.", 
-        content: "Google AI destekli arama sonuçlarına geçiş yaparken...", 
-        date: "20 Ocak 2025" 
-    },
-    { 
-        id: 2, cat: "Teknik SEO", 
-        title: "LCP Değerini Saniyeler İçinde Düşürün", 
-        desc: "Largest Contentful Paint (LCP) değeri, bir web sayfasının ana içeriğinin yüklenme hızını ölçen en kritik Core Web Vitals metriklerinden biridir. Bu rehberde, resimlerin modern WebP formatına dönüştürülmesinden, kritik CSS yollarının optimize edilmesine ve sunucu yanıt süresini (TTFB) minimize edecek CDN yapılandırmalarına kadar teknik başarıya giden yolu anlatıyoruz.", 
-        content: "Hız bir seçenek değil, zorunluluktur...", 
-        date: "18 Ocak 2025" 
-    },
-    { 
-        id: 3, cat: "Strateji", 
-        title: "Sıfırıncı Sıra (Featured Snippets) Kazanma Rehberi", 
-        desc: "Google sonuçlarında 1. sıranın üzerinde yer alan 'Featured Snippet' kutucukları, sitenize devasa bir tıklama oranı (CTR) avantajı sağlar. Peki, içeriğinizi Google'ın en sevdiği format olan listeler, tablolar ve kısa soru-cevap bloklarına nasıl dönüştürürsünüz? Rakiplerinizin önüne geçmek için yapılandırılmış veri ve semantik yazım tekniklerini nasıl kullanacağınızı bu yazıda bulabilirsiniz.", 
-        content: "Soru odaklı başlıklar ve tablo yapısı kullanarak...", 
-        date: "15 Ocak 2025" 
-    },
-    { 
-        id: 4, cat: "İçerik", 
-        title: "EEAT Kriterleri: Güven ve Otorite İnşası", 
-        desc: "Deneyim (Experience), Uzmanlık (Expertise), Otorite (Authoritativeness) ve Güven (Trustworthiness) kelimelerinin kısaltması olan EEAT, Google'ın bir içeriğe puan verirken baktığı en önemli unsurdur. Yazar biyografilerinden dış kaynaklı bilimsel referanslara kadar sitenizin güvenilirliğini nasıl ispatlayacağınızı ve 'Helpful Content' güncellemelerinden nasıl sağ çıkacağınızı öğrenin.", 
-        content: "Google artık yazarı belli olmayan içerikleri güvenilmez buluyor...", 
-        date: "12 Ocak 2025" 
-    },
-    { 
-        id: 5, cat: "Yerel SEO", 
-        title: "Google Haritalarda Zirveye Çıkma Yolları", 
-        desc: "Yerel işletmeler için fiziksel mağazaya müşteri çekmenin en kısa yolu Google Haritalar'da (Local Pack) görünür olmaktır. İşletme profilinizin optimizasyonundan, kullanıcı yorumlarının SEO etkisine ve yerel dizinlerdeki NAP (İsim, Adres, Telefon) tutarlılığının algoritmalar üzerindeki kritik etkisine kadar tüm bölgesel büyüme taktiklerini bir araya getirdik.", 
-        content: "İşletme profilinizin eksiksiz olması...", 
-        date: "10 Ocak 2025" 
-    },
-    { 
-        id: 6, cat: "Teknik SEO", 
-        title: "Robots.txt ve Tarama Bütçesi Yönetimi", 
-        desc: "Arama motoru botlarının sitenizdeki önemli sayfaları daha sık ziyaret etmesini ve gereksiz sayfalarla vakit kaybetmemesini nasıl sağlarsınız? Crawl Budget (Tarama Bütçesi) adı verilen bu kavramı optimize etmek için robots.txt dosyanızı nasıl yapılandırmanız gerektiğini, hangi dizinlere izin verip hangilerini engellemeniz gerektiğini teknik detaylarıyla ele alıyoruz.", 
-        content: "Yanlış bir Disallow komutu tüm sitenizi silebilir...", 
-        date: "08 Ocak 2025" 
-    },
-    { 
-        id: 7, cat: "SEO", 
-        title: "Semantik SEO ve Konu Kümeleri (Topic Clusters)", 
-        desc: "Geleneksel anahtar kelime odaklı SEO'nun yerini artık 'Konu Otoritesi' aldı. Sitenizdeki içerikleri bir örümcek ağı gibi birbirine bağlayarak Google'a o konuda uzman olduğunuzu nasıl ispatlarsınız? Pillar Page (Sütun Sayfa) ve Cluster Content (Küme İçerik) mimarisiyle, en zorlu anahtar kelimelerde bile nasıl otorite kuracağınızı keşfedin.", 
-        content: "Sadece ana kelimeye odaklanmak yerine...", 
-        date: "05 Ocak 2025" 
-    },
-    { 
-        id: 8, cat: "E-Ticaret", 
-        title: "E-Ticaret Sitelerinde Kategori SEO Stratejisi", 
-        desc: "E-ticaret sitelerinin can damarı olan kategori sayfaları, genellikle en yüksek arama hacmine sahip kelimeleri hedefler. Filtreleme sayfalarındaki yinelenen içerik (Duplicate Content) sorunlarını çözmek, kategori altı açıklamaların SEO etkisini artırmak ve ürün hiyerarşisini Google'ın anlayacağı şekilde kurgulamak için gereken tüm adımları tek tek sıralıyoruz.", 
-        content: "Ürün yorumları ve Schema Product verileri ile...", 
-        date: "02 Ocak 2025" 
-    },
-    { 
-        id: 9, cat: "SEO", 
-        title: "Tıklama Oranını (CTR) Artırmak İçin Psikolojik Taktikler", 
-        desc: "Siteniz arama sonuçlarında görünse bile eğer kimse tıklamıyorsa sıralamanız zamanla düşecektir. Meta başlıklarında (Title) ve açıklamalarında (Description) merak uyandırıcı soru kalıpları, aksiyon çağrıları (CTA) ve rakamların kullanımıyla, mevcut sıralamanızı koruyarak trafiğinizi nasıl iki katına çıkarabileceğinizi bu rehberde inceliyoruz.", 
-        content: "Daha fazla tıklanmak için merak uyandırıcı başlıklar...", 
-        date: "30 Ara 2024" 
-    },
-    { 
-        id: 10, cat: "Teknik SEO", 
-        title: "Sitemap.xml: İndekslenme Hızınızı Artırın", 
-        desc: "Web sitenize yeni eklediğiniz bir içeriğin Google tarafından fark edilmesi bazen günler sürebilir. Dinamik site haritalarının doğru yapılandırılması, Search Console üzerinden manuel ping gönderimi ve site haritasındaki öncelik (Priority) değerlerinin botlar üzerindeki etkisi gibi konularla sitenizin her zaman güncel kalmasını sağlamanın yollarını öğrenin.", 
-        content: "Dinamik site haritaları ve Search Console...", 
-        date: "28 Ara 2024" 
-    },
-    { 
-        id: 11, cat: "SEO", 
-        title: "Voice Search (Sesli Arama) İçin İçerik Optimizasyonu", 
-        desc: "Siri, Alexa ve Google Asistan kullanımının artmasıyla birlikte, aramalar artık daha uzun ve soru odaklı hale geldi. İnsanların konuşma dilini kullanarak yaptığı aramaları nasıl yakalarsınız? Uzun kuyruklu anahtar kelimeler ve 'Nasıl yapılır?' odaklı rehber içeriklerle geleceğin arama dünyasına şimdiden nasıl hazırlanacağınızı anlatıyoruz.", 
-        content: "Konuşma diline uygun, uzun kuyruklu kelimeler...", 
-        date: "25 Ara 2024" 
-    },
-    { 
-        id: 12, cat: "Strateji", 
-        title: "Parasite SEO: Yüksek Otoriteli Platformları Kullanma", 
-        desc: "Kendi sitenizin otoritesi henüz düşükken, Medium, LinkedIn veya prestijli haber siteleri gibi devasa platformların gücünü kullanarak rekabetçi kelimelerde nasıl hızla sıralama alabilirsiniz? Parasite SEO taktiklerinin etik sınırlarını, risklerini ve doğru uygulandığında sağladığı devasa trafik avantajlarını derinlemesine tartışıyoruz.", 
-        content: "Otoriter platformlarda yayınlanan içeriklerin gücü...", 
-        date: "22 Ara 2024" 
-    },
-    { 
-        id: 13, cat: "Teknik SEO", 
-        title: "Canonical Etiketi ile Yinelenen İçerik Yönetimi", 
-        desc: "Aynı içeriğe sahip birden fazla URL'nin (parametreler, filtreler vb.) sitenizde bulunması, Google'ın hangi sayfayı indeksleyeceğini şaşırmasına neden olur. Canonical etiketinin doğru kullanımıyla, SEO gücünüzün bölünmesini nasıl engellersiniz? Yanlış canonical kullanımının sitenize verebileceği zararları ve teknik çözüm yollarını keşfedin.", 
-        content: "Benzer sayfalar arasında asıl sayfayı seçme...", 
-        date: "20 Ara 2024" 
-    },
-    { 
-        id: 14, cat: "İçerik", 
-        title: "Content Pruning: Daha Az İçerikle Daha Çok Trafik", 
-        desc: "Bazen sitenizdeki içerikleri silmek, yeni içerik eklemekten daha fazla fayda sağlar. Performans göstermeyen, eski ve düşük kaliteli sayfaları temizleyerek sitenizin 'kalite puanını' nasıl artırırsınız? Hangi sayfaların silinmesi, hangilerinin birleştirilmesi (Redirect) gerektiğine dair veri odaklı bir temizlik rehberi hazırladık.", 
-        content: "Trafik almayan ve güncelliğini yitirmiş sayfalar...", 
-        date: "18 Ara 2024" 
-    },
-    { 
-        id: 15, cat: "SEO", 
-        title: "Negatif SEO Saldırıları ve Savunma Teknikleri", 
-        desc: "Rakiplerinizin sitenize binlerce spam backlink göndererek sizi Google gözünde cezalandırmaya çalışmasına 'Negatif SEO' denir. Sitenizi bu tür kirli oyunlardan korumak için Google Disavow aracını nasıl kullanmalısınız? Düzenli backlink denetimi yapmanın ve şüpheli trafik artışlarını analiz etmenin önemini vaka analizleriyle anlatıyoruz.", 
-        content: "Disavow aracı kullanımı ve düzenli denetim...", 
-        date: "15 Ara 2024" 
-    },
-    { 
-        id: 16, cat: "Yerel SEO", 
-        title: "NAP Tutarlılığı Neden SEO İçin Hayatidir?", 
-        desc: "İşletme Adı, Adresi ve Telefon numarası (NAP) bilgilerinin web üzerindeki tüm rehberlerde, haritalarda ve sosyal medyada birebir aynı olması gerekir. Ufak bir farklılığın bile Google'ın güvenini nasıl sarstığını ve yerel sıralamanızı nasıl aşağı çektiğini teknik verilerle açıklarken, bu verileri tek merkezden nasıl yönetebileceğinizi anlatıyoruz.", 
-        content: "İsim, Adres ve Telefon bilgilerinin her platformda...", 
-        date: "12 Ara 2024" 
-    },
-    { 
-        id: 17, cat: "E-Ticaret", 
-        title: "Ürün Yorumlarının SEO ve Satışa Etkisi", 
-        desc: "Kullanıcılar tarafından oluşturulan içerikler (UGC), Google için taze bilgi kaynağıdır. Ürün sayfalarınızdaki kullanıcı yorumlarının anahtar kelime çeşitliliğini nasıl artırdığını, yıldızlı sonuçların (Schema) tıklanma oranına etkisini ve olumsuz yorumları bile SEO avantajına nasıl çevirebileceğinizi bu kapsamlı yazıda paylaşıyoruz.", 
-        content: "Kategori altı metinler ve filtreleme sayfaları...", 
-        date: "10 Ara 2024" 
-    },
-    { 
-        id: 18, cat: "Teknik SEO", 
-        title: "SSL Sertifikası ve HTTPS'e Geçişin SEO Gücü", 
-        desc: "Güvenli olmayan bir site (HTTP), Google Chrome tarafından 'Güvenli Değil' uyarısıyla işaretlenir ve bu da hemen çıkma oranlarını tavan yaptırır. HTTPS protokolüne geçişin sadece bir güvenlik önlemi değil, aynı zamanda bir sıralama faktörü olduğunu biliyor muydunuz? Doğru 301 yönlendirmeleriyle otorite kaybı yaşamadan geçiş yapmanın püf noktaları.", 
-        content: "SSL sertifikası olmayan siteler cezalandırılıyor...", 
-        date: "08 Ara 2024" 
-    },
-    { 
-        id: 19, cat: "SEO", 
-        title: "Search Intent (Arama Niyeti) Nasıl Analiz Edilir?", 
-        desc: "Bir kullanıcı 'Elma' diye arattığında meyve mi yoksa teknoloji markasını mı kastediyor? Bilgi edinme, satın alma veya belirli bir siteye gitme gibi farklı niyetlere uygun içerik üretmezseniz asla zirveye çıkamazsınız. Google'ın arama sonuç sayfasını (SERP) analiz ederek kullanıcı niyetini nasıl okuyacağınızı örneklerle açıklıyoruz.", 
-        content: "Kullanıcının niyetini anlamadan yazılan içerikler...", 
-        date: "05 Ara 2024" 
-    },
-    { 
-        id: 20, cat: "Strateji", 
-        title: "Doğal Backlink Kazanma Yolları (Link Building)", 
-        desc: "Backlink satın almak yerine, insanların içeriklerinize kendiliğinden link vermesini nasıl sağlarsınız? Orijinal araştırmalar yayınlamak, infografik tasarımı ve dijital PR teknikleriyle 'link mıknatısı' içerikler oluşturmanın stratejilerini anlatıyoruz. Doğal link inşasının sürdürülebilir başarıdaki kritik rolünü bu rehberde keşfedin.", 
-        content: "Misafir yazarlık ve kırık link inşası...", 
-        date: "02 Ara 2024" 
-    },
-    { 
-        id: 21, cat: "Teknik SEO", 
-        title: "Log Dosyası Analizi ile Bot Hareketlerini İzleme", 
-        desc: "Search Console verileri bazen yetersiz kalabilir. Sunucu loglarınızı analiz ederek, Googlebot'un sitenize hangi IP'lerle geldiğini, hangi sayfalarda 404 hatasıyla karşılaştığını ve tarama bütçenizi en çok neyin tükettiğini ham veriler üzerinden nasıl görebileceğinizi, teknik bir perspektifle inceliyoruz.", 
-        content: "Sunucu log dosyalarını analiz ederek...", 
-        date: "30 Kas 2024" 
-    },
-    { 
-        id: 22, cat: "İçerik", 
-        title: "Evergreen Content: Eskimeyen İçerik Üretimi", 
-        desc: "Bugün yazdığınız bir yazının 3 yıl sonra bile sitenize trafik getirmesini istemez misiniz? Haber değeri olan geçici içerikler yerine, zamanın ötesinde ve her zaman aranan 'Nasıl Yapılır', 'Rehber' veya 'Tanım' içerikleri üretmenin avantajlarını ve bu yazıların güncelliğini nasıl koruyacağınızı detaylandırıyoruz.", 
-        content: "Güncelliğini kaybetmeyen konulara odaklanarak...", 
-        date: "28 Kas 2024" 
-    },
-    { 
-        id: 23, cat: "SEO", 
-        title: "Hreflang Etiketi ile Çok Dilli Site Yönetimi", 
-        desc: "Global bir markaysanız ve farklı dillerde yayın yapıyorsanız, Google'ın doğru dildeki sayfayı doğru ülkeye göstermesi için hreflang yapılandırması şarttır. Bu etiketin kullanımındaki en yaygın hataları, x-default değerinin önemini ve çok dilli sitelerde indeksleme sorunlarının teknik çözüm yollarını bu rehberde bulabilirsiniz.", 
-        content: "Global sitelerde dil karmaşasını önlemek...", 
-        date: "25 Kas 2024" 
-    },
-    { 
-        id: 24, cat: "Teknik SEO", 
-        title: "JavaScript SEO: Modern Frameworklerde İndekslenme", 
-        desc: "React, Next.js veya Vue gibi modern frameworklerle hazırlanan siteler, botların JavaScript'i render edememesi durumunda büyük trafik kayıpları yaşayabilir. Server Side Rendering (SSR) ve Static Site Generation (SSG) arasındaki farkları, botlar için dinamik render tekniklerini ve JS tabanlı sitelerin Google dostu hale getirilmesini anlatıyoruz.", 
-        content: "Dinamik olarak yüklenen içeriklerin okunması...", 
-        date: "20 Kas 2024" 
-    }
-];
-
-        let currentPage = 1;
-        const postsPerPage = 6;
-
-        function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-            window.scrollTo(0,0);
-            if(pageId === 'blog') renderBlog();
-        }
-
-        function renderBlog() {
-    const blogGrid = document.getElementById('blog-grid');
-    blogGrid.innerHTML = "";
-    const start = (currentPage - 1) * postsPerPage;
-    const end = start + postsPerPage;
-    const paginatedPosts = posts.slice(start, end);
-
-    paginatedPosts.forEach(post => {
-        const card = `
+        <div class="grid">
             <div class="card">
-                <span class="category-badge" style="background:${getCatColor(post.cat)}">${post.cat}</span>
-                <h3>${post.title}</h3>
-                <p style="font-size:0.9rem; color:var(--text-mid); margin-bottom:20px;">${post.desc}</p>
-                
-                <!-- ALT KISIM DÜZENLEMESİ -->
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-top: auto;">
-                    <small style="display: flex; align-items: center; gap: 5px;">
-                        <i class="far fa-calendar-alt"></i> ${post.date}
-                    </small>
-                    <a onclick="viewBlogDetail(${post.id})" style="color:var(--primary-blue); font-weight:700; cursor:pointer; display: inline-flex; align-items: center; gap: 8px;">
-                        Oku <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i>
-                    </a>
-                </div>
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Tasarım Mimarisi</h3>
+                <p>Tekirdağ'da kullanıcı dostu ve hızlı yüklenen web siteleri inşa etmenin kodlama temellerini öğrenin.</p>
             </div>
-        `;
-        blogGrid.innerHTML += card;
-    });
-    renderPagination();
-}
-
-        function renderPagination() {
-            const paginationDiv = document.getElementById('pagination');
-            paginationDiv.innerHTML = "";
-            const pageCount = Math.ceil(posts.length / postsPerPage);
-            for (let i = 1; i <= pageCount; i++) {
-                const btn = document.createElement('div');
-                btn.className = `page-num ${i === currentPage ? 'active' : ''}`;
-                btn.innerText = i;
-                btn.onclick = () => { currentPage = i; renderBlog(); window.scrollTo(0, 400); };
-                paginationDiv.appendChild(btn);
-            }
-        }
-
-        function getCatColor(cat) {
-            switch(cat) {
-                case 'SEO': return 'var(--primary-blue)';
-                case 'Teknik SEO': return 'var(--dark-black)';
-                case 'Strateji': return 'var(--primary-green)';
-                case 'Yerel SEO': return 'var(--primary-yellow)';
-                default: return 'var(--text-mid)';
-            }
-        }
-
-        function viewBlogDetail(id) {
-    const post = posts.find(p => p.id === id);
-    const contentDiv = document.getElementById('blog-detail-content');
-    
-    contentDiv.innerHTML = `
-        <div class="back-btn" onclick="showPage('blog')">
-            <i class="fas fa-chevron-left"></i> Blog Listesine Dön
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>SEO Mühendisliği</h3>
+                <p>Arama motoru optimizasyonu süreçlerinde anahtar kelime analizinden teknik audit işlemlerine kadar her adım.</p>
+            </div>
         </div>
-        
-        <div class="category-badge" style="background:${getCatColor(post.cat)}">${post.cat}</div>
-        
-        <h1 style="margin-bottom: 25px; line-height: 1.3;">${post.title}</h1>
-        
-        <div class="meta-info">
-            <span><i class="far fa-calendar"></i> ${post.date}</span>
-            <span><i class="far fa-user"></i> Tech With Omer SEO Ekibi</span>
-            <span><i class="far fa-clock"></i> 5 Dakika Okuma</span>
-        </div>
-
-        <div class="content-body">
-            <!-- Özet / Giriş Kısmı (Genişlettiğimiz desc burada görünecek) -->
-            <p style="font-size: 1.25rem; font-weight: 500; color: var(--primary-blue); border-left: 5px solid var(--primary-yellow); padding-left: 20px; margin-bottom: 30px;">
-                ${post.desc}
-            </p>
-
-            <!-- Ana İçerik -->
-            <div style="margin-top: 20px;">
-                <p>${post.content}</p>
-                <br>
-                <p>Arama motoru optimizasyonu (SEO), statik bir işlem değil, sürekli devam eden bir süreçtir. Google'ın her yıl yayınladığı yüzlerce küçük ve büyük algoritma güncellemesine uyum sağlamak, teknik altyapıyı güncel tutmak ve kullanıcı deneyimini (UX) her zaman önceliklendirmek başarının anahtarıdır.</p>
-                
-                <h3 style="margin: 30px 0 15px; color: var(--dark-black);">Neden Bu Strateji Önemli?</h3>
-                <p>Veri odaklı yaklaşımlar, tahminlere dayalı çalışmalardan çok daha hızlı sonuç verir. Özellikle yukarıda bahsettiğimiz ${post.title} konusu, modern SEO dünyasında markaların rakiplerinden ayrıştığı temel noktalardan biridir.</p>
-                
-                <div style="background: var(--light-gray); padding: 30px; border-radius: 15px; margin-top: 40px; border: 1px solid var(--border);">
-                    <h4 style="margin-bottom: 10px;"><i class="fas fa-lightbulb" style="color: var(--primary-yellow);"></i> Profesyonel İpucu</h4>
-                    <p>Sitenizdeki teknik hataları ayda en az bir kez Google Search Console üzerinden kontrol edin. Özellikle Core Web Vitals verileri, Google'ın sitenizi ne kadar "kaliteli" bulduğunun en net kanıtıdır.</p>
-                </div>
+    </main>
+    <footer>
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Hakkında / Misyon -->
+            <div class="footer-about">
+                <h3>TECH<span>WITHOMER</span></h3>
+                <p>Tekirdağ'ın dijital gelişimine katkı sağlamak amacıyla kurulan, kâr amacı gütmeyen bir eğitim platformudur. Web tasarım ve SEO dünyasındaki teknik bilgileri, herkesin anlayabileceği ücretsiz rehberlerle paylaşıyoruz.</p>
             </div>
 
-            <p style="margin-top:40px; padding: 20px; background: #eef2ff; border-radius: 12px; font-weight:bold; color: var(--primary-blue); text-align: center;">
-                <i class="fas fa-chart-line"></i> Sitenizin SEO sağlığını merak ediyorsanız, size özel ücretsiz bir ön analiz hazırlamamızı ister misiniz? 
-                <br>
-                <a href="#" style="text-decoration: underline;">Hemen bizimle iletişime geçin.</a>
-            </p>
+            <!-- Eğitim Kategorileri (Hizmet yerine) -->
+            <div>
+                <h4>Eğitim Modülleri</h4>
+                <ul style="list-style: none;">
+                    <li><a href="blog.html?cat=web-tasarim" style="opacity: 0.8; font-size: 0.9rem;">Modern Web Tasarım</a></li>
+                    <li><a href="blog.html?cat=seo" style="opacity: 0.8; font-size: 0.9rem;">Algoritmik SEO Dersleri</a></li>
+                    <li><a href="blog.html?cat=teknik" style="opacity: 0.8; font-size: 0.9rem;">Teknik Web Rehberleri</a></li>
+                    <li><a href="blog.html?cat=ai" style="opacity: 0.8; font-size: 0.9rem;">Yapay Zeka ve Yazılım</a></li>
+                </ul>
+            </div>
+
+            <!-- Faydalı Bağlantılar -->
+            <div>
+                <h4>Bilgi Bankası</h4>
+                <ul style="list-style: none;">
+                    <li><a href="blog.html" style="opacity: 0.8; font-size: 0.9rem;">Tüm Eğitim İçerikleri</a></li>
+                    <li><a href="hakkimda.html" style="opacity: 0.8; font-size: 0.9rem;">Eğitmen Vizyonu</a></li>
+                    <li><a href="#" style="opacity: 0.8; font-size: 0.9rem;">Yol Haritaları</a></li>
+                    <li><a href="https://github.com/" target="_blank" style="opacity: 0.8; font-size: 0.9rem;">Açık Kaynak Kodlar</a></li>
+                </ul>
+            </div>
+
+            <!-- Yerel Misyon ve İletişim -->
+            <div>
+                <h4>Tekirdağ Dijital Akademi</h4>
+                <p style="font-size: 0.85rem; opacity: 0.8; line-height: 1.4;">Bu platform Süleymanpaşa, Çorlu ve Çerkezköy bölgesindeki genç yazılımcı adayları ve girişimciler için bir kaynak niteliğindedir.</p>
+             
+            </div>
         </div>
-    `;
-    showPage('blog-detail');
-}
 
-        window.onload = () => { renderBlog(); };
-
-        // Mobil Menü Toggle Fonksiyonu
-const menuToggle = document.getElementById('mobile-menu');
-const navLinks = document.getElementById('nav-list');
-
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    // İkonu değiştir (bars <-> times)
-    const icon = menuToggle.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-times');
-});
-
-// Menü linklerine tıklandığında menüyü otomatik kapat
-function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
-    
-    // Mobil menü açıksa kapat
-    if (navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        const icon = menuToggle.querySelector('i');
-        icon.classList.add('fa-bars');
-        icon.classList.remove('fa-times');
-    }
-    
-    window.scrollTo(0,0);
-    if(pageId === 'blog') renderBlog();
-}
-    </script>
+        <!-- Alt Bilgi -->
+        <div style="text-align:center; padding-top:40px; margin-top:40px; border-top:1px solid rgba(255,255,255,0.1); font-size:0.8rem; opacity:0.6;">
+            <p>Tech With Omer | Tekirdağ Ücretsiz Web Tasarım ve SEO Eğitim Platformu &copy; 2026</p>
+        </div>
+    </div>
+</footer>
+    <script src="script.js"></script>
 </body>
 </html>
