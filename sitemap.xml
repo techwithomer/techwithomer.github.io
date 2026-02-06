@@ -1,114 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Ana Sayfalar -->
-  <url>
-    <loc>https://techwithomer.github.io/index.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>1.00</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/hakkimda.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- Blog Yazıları -->
-  <url>
-    <loc>https://techwithomer.github.io/blog/web-tasarim-nedir.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/seo-nedir.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/responsive-tasarim-onemi.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/hizli-yuklenen-web-siteleri.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/kurumsal-kimlik-ve-web.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/react-vs-nextjs-hangisi.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/icerik-pazarlamasi-stratejileri.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/e-ticaret-sitesi-kurarken-dikkat.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/google-ads-ipuclari.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/kullanici-deneyimi-ux-nedir.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/backlink-nedir-nasil-alinir.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/sosyal-medya-ve-seo.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/web-guvenligi-rehberi.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/yapay-zeka-ve-tasarim.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://techwithomer.github.io/blog/minimalist-web-tasarim.html</loc>
-    <lastmod>2026-02-06</lastmod>
-    <priority>0.64</priority>
-  </url>
-
+    <url>
+        <loc>https://techwithomer.github.io/</loc>
+        <lastmod>2024-01-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://techwithomer.github.io/blog/</loc>
+        <lastmod>2024-01-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://techwithomer.github.io/blog/web-tasarim-nedir/</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://techwithomer.github.io/blog/seo-nedir/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://techwithomer.github.io/blog/responsive-web-tasarim/</loc>
+        <lastmod>2024-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
 </urlset>

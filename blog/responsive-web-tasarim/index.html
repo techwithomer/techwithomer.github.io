@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Tasarım: Mobil Uyumlu Siteler - Tekirdağ Web Tasarım Blogu</title>
+    <meta name="description" content="Responsive tasarımın önemini, nasıl uygulandığını ve mobil kullanıcılar için optimize edilmiş web siteleri oluşturma tekniklerini öğrenin.">
+    <meta name="keywords" content="responsive web tasarım, mobil uyumlu, CSS media queries, flexbox, tekirdağ web tasarım">
+    <meta name="author" content="Tekirdağ Web Tasarım Blogu">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://techwithomer.github.io/blog/responsive-web-tasarim/">
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DT1LZNLXEZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DT1LZNLXEZ');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Tekirdağ Web Tasarım ve SEO Eğitimi</h1>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Ana Sayfa</a></li>
+                    <li><a href="../">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="content">
+            <div class="container">
+                <article class="blog-detail">
+                    <div class="meta">
+                        <time datetime="2024-01-25">25 Ocak 2024</time>
+                    </div>
+
+                    <h2>Responsive Web Tasarım: Mobil Uyumlu Siteler</h2>
+
+                    <h3>Responsive Tasarımın Önemi</h3>
+                    <p>Responsive web tasarımı, web sitelerinin farklı ekran boyutlarında düzgün görüntülenmesini sağlar. Mobil cihaz kullanımının artmasıyla birlikte vazgeçilmez hale gelmiştir.</p>
+
+                    <h3>CSS Media Queries</h3>
+                    <p>Media queries, farklı ekran boyutlarına göre CSS kuralları tanımlamayı sağlar. Breakpoint'ler belirleyerek esnek düzenler oluşturulur.</p>
+
+                    <p>Örneğin, mobil cihazlar için farklı düzen kuralları tanımlamak için:</p>
+                    <pre><code>@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+}</code></pre>
+
+                    <h3>Flexbox ve Grid Sistemleri</h3>
+                    <ul>
+                        <li><strong>Flexbox:</strong> Tek boyutlu düzen için ideal</li>
+                        <li><strong>CSS Grid:</strong> İki boyutlu karmaşık düzenler için</li>
+                    </ul>
+
+                    <p>Flexbox ile esnek düzenler oluşturmak için temel özellikler:</p>
+                    <ul>
+                        <li><code>display: flex</code> - Flex container oluşturur</li>
+                        <li><code>justify-content</code> - Ana eksende hizalama</li>
+                        <li><code>align-items</code> - Çapraz eksende hizalama</li>
+                        <li><code>flex-wrap</code> - Çoklu satır desteği</li>
+                    </ul>
+
+                    <h3>Mobil İlk Yaklaşım</h3>
+                    <p>Mobile-first tasarım, küçük ekranlardan başlayarak büyük ekranlara doğru ölçeklendirme yapar. Bu yaklaşım, performans ve kullanıcı deneyimi açısından avantaj sağlar.</p>
+
+                    <p>Mobile-first CSS yazımı örneği:</p>
+                    <pre><code>/* Mobil stiller */
+.container {
+    padding: 1rem;
+}
+
+/* Tablet ve üstü */
+@media (min-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}</code></pre>
+
+                    <h3>Görseller ve Medya</h3>
+                    <p>Responsive tasarımda görsellerin farklı ekranlarda düzgün görüntülenmesi için:</p>
+                    <ul>
+                        <li><code>srcset</code> attribute'u ile farklı boyutlarda görseller</li>
+                        <li><code>sizes</code> attribute'u ile görüntü alanı tanımlama</li>
+                        <li>CSS ile <code>max-width: 100%</code> ayarı</li>
+                    </ul>
+
+                    <h3>Test ve Optimizasyon</h3>
+                    <p>Responsive tasarımın test edilmesi için:</p>
+                    <ul>
+                        <li>Chrome DevTools'un device mode'u</li>
+                        <li>Gerçek cihazlarda test</li>
+                        <li>Cross-browser testing araçları</li>
+                    </ul>
+
+                    <p>Tekirdağ'da web tasarım eğitimi alan geliştiriciler, responsive tekniklerin yanı sıra performans optimizasyonu ve erişilebilirlik konularını da öğrenmelidir.</p>
+
+                    <div class="cta">
+                        <a href="../" class="btn">Diğer Blog Yazılarına Dön</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tekirdağ Web Tasarım ve SEO Eğitimi Blogu. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+</body>
+</html>
