@@ -52,6 +52,7 @@
         <div class="container">
 
             <!-- Mevcut kodun içinde nav etiketi şu şekilde güncellenmeli -->
+
 <nav>
   <div class="logo">
     <a href="index.html" style="text-decoration:none; color:inherit;">
@@ -70,6 +71,7 @@
   </ul>
 </nav>
 
+
         </div>
 
     </header>
@@ -77,26 +79,18 @@
 
 
 
-
-        <!-- BLOG PAGE -->
-<!-- ... Header Kısmı Aynı ... -->
+        <!-- ... Header Kısmı Aynı ... -->
 <main class="container">
-    
-        <br />
-        <br />
-    <section id="blog">
-        <div class="section-title">
-            <h2>SEO & Dijital Pazarlama Blogu</h2>
-            <p>En güncel SEO stratejileri ve teknik rehberler.</p>
-            <br />
-            <div></div>
+    <section id="blog-detail" class="page active">
+        <div id="blog-detail-content">
+            <!-- JS ile ID'ye göre içerik buraya gelecek -->
         </div>
-        <div class="blog-grid" id="blog-grid">
-            <!-- JS ile dolacak -->
-        </div>
-        <div class="pagination" id="pagination"></div>
     </section>
 </main>
+
+
+
+
 
 
     <footer>
@@ -178,12 +172,55 @@
         </div>
 
     </footer>
-<!-- ... Footer ve Scriptler ... -->
-<script src="../posts.js"></script>
+
 <script src="../script.js"></script>
+<script src="../posts.js"></script>
+
 <script>
-    // Sayfa yüklendiğinde blogu render et
-    window.onload = () => { renderBlog(); };
+function createSlug(text) {
+  return text
+    .toString()
+    .normalize("NFD")                 // unicode normalize
+    .replace(/[\u0300-\u036f]/g, "")  // aksanları sil
+    .replace(/ı/g, "i")
+    .replace(/İ/g, "i")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
+
+function getSlugFromUrl() {
+  return window.location.pathname
+    .split('/')
+    .pop()
+    .replace('.html', '');
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slug = getSlugFromUrl();
+  console.log("Slug:", slug);
+  console.log("Posts:", posts);
+
+  const post = posts.find(p => createSlug(p.title) === slug);
+
+  const contentDiv = document.getElementById("blog-detail-content");
+
+  if (!post) {
+    contentDiv.innerHTML = "<h2>Yazı bulunamadı</h2>";
+    return;
+  }
+
+  contentDiv.innerHTML = `
+    <span class="category-badge">${post.cat}</span>
+    <h1>${post.title}</h1>
+    <small>${post.date}</small>
+    <p>${post.desc}</p>
+    <div>${post.content}</div>
+  `;
+});
 </script>
 
 </body>
