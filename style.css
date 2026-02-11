@@ -136,7 +136,7 @@
 
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
 
-        .card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 40px 30px; transition: 0.3s; position: relative; }
+        .card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 40px 30px; transition: 0.3s; position: relative; margin-bottom: 24px; }
 
         .card i { font-size: 2rem; color: var(--primary-blue); margin-bottom: 20px; }
 
@@ -294,4 +294,71 @@
 
     }
 
+}
+
+/* Sayfalama Alanı Konteynırı */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 50px 0;
+}
+
+/* Sayfa Numaraları ve Butonlar */
+.page-num {
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    user-select: none;
+    background: white;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Aktif Sayfa */
+.page-num.active {
+    background: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+}
+
+/* Hover Durumu */
+.page-num:hover:not(.active):not(.disabled) {
+    background: var(--light-gray);
+    border-color: var(--primary-yellow);
+    color: var(--primary-yellow);
+}
+
+/* Devre Dışı (Geri/İleri) Butonu */
+.page-num.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #f5f5f5;
+}
+
+/* Mobilde butonları biraz küçültelim */
+@media (max-width: 480px) {
+    .page-num {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    align-items: stretch; /* Kart boylarını eşitler */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Kartın içindeki butonun en alta yapışmasını sağlar */
 }

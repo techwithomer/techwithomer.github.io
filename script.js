@@ -115,6 +115,39 @@ function createSlug(text) {
 
 
 
+        function viewBlogDetail(id, slug) {
+    const post = posts.find(p => p.id === id);
+    if (!slug) slug = createSlug(post.title);
+
+    // URL'yi değiştirme (Tarayıcı çubuğunda gözükecek olan)
+    const newUrl = window.location.origin + '/blog/' + slug;
+    window.history.pushState({ postId: id }, '', newUrl);
+
+    const contentDiv = document.getElementById('blog-detail-content');
+    
+    // İçerik oluşturma kısmı (Sizin mevcut kodunuz aynen kalabilir)
+    contentDiv.innerHTML = `
+        <div class="back-btn" onclick="goBackToBlog()">
+            <i class="fas fa-chevron-left"></i> Blog Listesine Dön
+        </div>
+        <div class="category-badge" style="background:${getCatColor(post.cat)}">${post.cat}</div>
+        <h1 style="margin-bottom: 25px; line-height: 1.3;">${post.title}</h1>
+        <!-- ... Diğer içerik alanlarınız ... -->
+        <div class="content-body">
+             <p>${post.desc}</p>
+             <div>${post.content}</div>
+        </div>
+    `;
+    
+    showPage('blog-detail');
+}
+
+// Geri dönüşte URL'yi temizlemek için
+function goBackToBlog() {
+    window.history.pushState({}, '', window.location.origin + '/blog');
+    showPage('blog');
+}
+
 
 
 
@@ -174,3 +207,64 @@ function showPage(pageId) {
     if(pageId === 'blog') renderBlog();
 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const blogGrid = document.querySelector('.blog-grid');
+    const items = blogGrid.querySelectorAll('.card');
+    const paginationContainer = document.getElementById('pagination');
+    
+    const itemsPerPage = 6; // Her sayfada kaç yazı görünsün?
+    let currentPage = 1;
+    const totalPages = Math.ceil(items.length / itemsPerPage);
+
+    function showPage(page) {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+
+        items.forEach((item, index) => {
+            if (index >= start && index < end) {
+                item.style.display = 'flex'; // Kartlar flex olduğu için
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        updatePaginationButtons(page);
+        // Sayfa değiştiğinde en yukarı (blog kısmına) yumuşak geçiş yap
+        document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function updatePaginationButtons(page) {
+        paginationContainer.innerHTML = '';
+
+        // Geri Butonu
+        const prevBtn = document.createElement('span');
+        prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        prevBtn.className = `page-num ${page === 1 ? 'disabled' : ''}`;
+        prevBtn.addEventListener('click', () => {
+            if (page > 1) showPage(page - 1);
+        });
+        paginationContainer.appendChild(prevBtn);
+
+        // Sayfa Numaraları
+        for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = document.createElement('span');
+            pageBtn.innerText = i;
+            pageBtn.className = `page-num ${i === page ? 'active' : ''}`;
+            pageBtn.addEventListener('click', () => showPage(i));
+            paginationContainer.appendChild(pageBtn);
+        }
+
+        // İleri Butonu
+        const nextBtn = document.createElement('span');
+        nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        nextBtn.className = `page-num ${page === totalPages ? 'disabled' : ''}`;
+        nextBtn.addEventListener('click', () => {
+            if (page < totalPages) showPage(page + 1);
+        });
+        paginationContainer.appendChild(nextBtn);
+    }
+
+    // İlk sayfayı başlat
+    showPage(1);
+});
