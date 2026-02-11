@@ -210,48 +210,60 @@ function showPage(pageId) {
 
 document.addEventListener('DOMContentLoaded', function() {
     const blogGrid = document.querySelector('.blog-grid');
+    
+    // EĞER blogGrid bu sayfada yoksa, fonksiyonu burada bitir (Hatayı önler)
+    if (!blogGrid) {
+        console.log("Blog grid bu sayfada bulunamadı, sayfalama atlanıyor.");
+        return; 
+    }
+
     const items = blogGrid.querySelectorAll('.card');
     const paginationContainer = document.getElementById('pagination');
     
-    const itemsPerPage = 6; // Her sayfada kaç yazı görünsün?
+    // Eğer sayfada hiç kart yoksa yine devam etme
+    if (items.length === 0) return;
+
+    const itemsPerPage = 6;
     let currentPage = 1;
     const totalPages = Math.ceil(items.length / itemsPerPage);
 
-    function showPage(page) {
+    // Diğer showPage fonksiyonuyla karışmaması için ismi yerel yapalım veya kontrol edelim
+    function setupPagination(page) {
         const start = (page - 1) * itemsPerPage;
         const end = start + itemsPerPage;
 
         items.forEach((item, index) => {
             if (index >= start && index < end) {
-                item.style.display = 'flex'; // Kartlar flex olduğu için
+                item.style.display = 'flex';
             } else {
                 item.style.display = 'none';
             }
         });
 
         updatePaginationButtons(page);
-        // Sayfa değiştiğinde en yukarı (blog kısmına) yumuşak geçiş yap
-        document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
+        
+        // Sadece blog sayfasıysa yukarı kaydır
+        const blogSection = document.getElementById('blog');
+        if(blogSection) blogSection.scrollIntoView({ behavior: 'smooth' });
     }
 
     function updatePaginationButtons(page) {
+        if (!paginationContainer) return;
         paginationContainer.innerHTML = '';
 
         // Geri Butonu
         const prevBtn = document.createElement('span');
         prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
         prevBtn.className = `page-num ${page === 1 ? 'disabled' : ''}`;
-        prevBtn.addEventListener('click', () => {
-            if (page > 1) showPage(page - 1);
-        });
+        prevBtn.onclick = () => { if (page > 1) setupPagination(page - 1); };
         paginationContainer.appendChild(prevBtn);
 
-        // Sayfa Numaraları
+        // Sayfalar
         for (let i = 1; i <= totalPages; i++) {
             const pageBtn = document.createElement('span');
             pageBtn.innerText = i;
             pageBtn.className = `page-num ${i === page ? 'active' : ''}`;
-            pageBtn.addEventListener('click', () => showPage(i));
+            pageBtn.onclick = () => setupPagination(i);
             paginationContainer.appendChild(pageBtn);
         }
 
@@ -259,12 +271,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const nextBtn = document.createElement('span');
         nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
         nextBtn.className = `page-num ${page === totalPages ? 'disabled' : ''}`;
-        nextBtn.addEventListener('click', () => {
-            if (page < totalPages) showPage(page + 1);
-        });
+        nextBtn.onclick = () => { if (page < totalPages) setupPagination(page + 1); };
         paginationContainer.appendChild(nextBtn);
     }
 
-    // İlk sayfayı başlat
-    showPage(1);
+    setupPagination(1);
 });

@@ -201,28 +201,7 @@ function getSlugFromUrl() {
     .replace('.html', '');
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const slug = getSlugFromUrl();
-  console.log("Slug:", slug);
-  console.log("Posts:", posts);
 
-  const post = posts.find(p => createSlug(p.title) === slug);
-
-  const contentDiv = document.getElementById("blog-detail-content");
-
-  if (!post) {
-    contentDiv.innerHTML = "<h2>Yazı bulunamadı</h2>";
-    return;
-  }
-
-  contentDiv.innerHTML = `
-    <span class="category-badge">${post.cat}</span>
-    <h1>${post.title}</h1>
-    <small>${post.date}</small>
-    <p>${post.desc}</p>
-    <div>${post.content}</div>
-  `;
-});
 </script>
 
 </body>
