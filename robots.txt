@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://techwithomer.github.io/sitemap.xml
+Sitemap: https://techwithomer.github.io/sitemap_index.xml
