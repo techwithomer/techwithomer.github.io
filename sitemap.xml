@@ -1,112 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <url>
+    <loc>https://techwithomer.github.io/</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
 
-<url>
-  <loc>https://techwithomer.github.io/</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/index.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/hakkimda.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/index.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/2025-google-algoritma-tahminleri-ve-gelecek.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/lcp-degerini-saniyeler-icinde-dusurun.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/sifirinci-sira-featured-snippets-kazanma-rehberi.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/2026-core-web-vitals-inp-metrigi-ve-render-optimizasyonunda-ileri-seviye.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/e-e-a-t-20-dijital-dunyada-deneyim-ve-guven-sinyalleri-olusturmak.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/e-ticaret-sitelerinde-kategori-ve-urun-sayfasi-otoritesini-artirma.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/vektorel-arama-ve-nlp-kelimelerden-kavramlara-seo-yolculugu.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/hyper-local-seo-haritalarda-ve-yerel-aramalarda-liderlik-stratejileri.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/programmatik-seo-ile-binlerce-sayfalik-icerik-agi-olusturmak.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/mobile-first-indeksleme-2026da-mobil-uyumlulugun-otesine-gecmek.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/sesli-arama-optimizasyonu-akilli-asistanlara-yanit-vermek.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/youtube-ve-web-video-seo-gorsel-iceriklerle-ust-siralara-cikmak.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/hreflang-ve-cok-dilli-seo-kuresel-pazarlarda-gorunurluk.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/search-console-ve-ga4-seo-basarisini-verilerle-olcumlemek.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/https-ve-guvenlik-sinyallerinin-seo-uzerindeki-kritik-rolu.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://techwithomer.github.io/blog/2027ye-dogru-seo-gelecegi-simdiden-tasarlamak.html</loc>
-  <lastmod>2026-02-11T17:33:49+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
+  <url>
+    <loc>https://techwithomer.github.io/index.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
 
+  <url>
+    <loc>https://techwithomer.github.io/hakkimda.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/2025-google-algoritma-tahminleri-ve-gelecek.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/lcp-degerini-saniyeler-icinde-dusurun.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/sifirinci-sira-featured-snippets-kazanma-rehberi.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/2026-core-web-vitals-inp-metrigi-ve-render-optimizasyonunda-ileri-seviye.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/e-e-a-t-20-dijital-dunyada-deneyim-ve-guven-sinyalleri-olusturmak.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/e-ticaret-sitelerinde-kategori-ve-urun-sayfasi-otoritesini-artirma.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/vektorel-arama-ve-nlp-kelimelerden-kavramlara-seo-yolculugu.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/hyper-local-seo-haritalarda-ve-yerel-aramalarda-liderlik-stratejileri.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/programmatik-seo-ile-binlerce-sayfalik-icerik-agi-olusturmak.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/mobile-first-indeksleme-2026da-mobil-uyumlulugun-otesine-gecmek.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/sesli-arama-optimizasyonu-akilli-asistanlara-yanit-vermek.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/youtube-ve-web-video-seo-gorsel-iceriklerle-ust-siralara-cikmak.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/hreflang-ve-cok-dilli-seo-kuresel-pazarlarda-gorunurluk.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/search-console-ve-ga4-seo-basarisini-verilerle-olcumlemek.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/https-ve-guvenlik-sinyallerinin-seo-uzerindeki-kritik-rolu.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
+  <url>
+    <loc>https://techwithomer.github.io/blog/2027ye-dogru-seo-gelecegi-simdiden-tasarlamak.html</loc>
+    <lastmod>2026-02-11T17:33:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
 
 </urlset>
